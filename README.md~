@@ -1,24 +1,10 @@
-# README
+StudySpace- connect with classmates
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+M117 Project
 
-Things you may want to cover:
+Team Members:
+Austin Lee
+Benson Han
+Daniel Guo
+Ryan Lo
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
