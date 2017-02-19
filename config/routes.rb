@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
   root 'pages#home'
-  resources :users
+  get '/register', to:'pages#register'
+  get '/home', to:'pages#home'
+  get '/search', to:'pages#search'
+
+
 end
