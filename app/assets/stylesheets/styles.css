@@ -1,0 +1,92 @@
+h1{
+  text-align: center;
+  font-size: 13vh;
+}
+html{
+  overflow: auto;
+}
+body{
+  background: white;
+}
+.heading h1{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  letter-spacing: .2em;
+  font-weight: lighter;
+}
+.login h2{
+  font-size: 20px;
+  text-align: center;
+}
+.login p{
+  text-align: center;
+  font-size: 12px;
+}
+
+#login_Btn{
+  float: right;
+}
+#register_Btn{
+  float: right;
+}
+.login{
+  background-color:white;
+  width: 400px;
+  height: auto;
+  padding-top: 15px;
+  padding-bottom: 1px;
+}
+.register{
+  background-color:white;
+  padding-top: 15px;
+  margin-bottom: 100px;
+  height: auto;
+  padding-bottom: 10px;
+  width: 800px;
+}
+.register h2{
+  font-size: 20px;
+  text-align: center;
+  font-style: italic;
+}
+#signin{
+  font-size: 10px;
+  text-align: center;
+}
+#register{
+  font-size: 10px;
+  text-align: center;
+}
+
+
+
+.line-1{
+    position: relative;
+    top: 25%;
+    width: 24em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 60px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+}
+
+/* Animation */
+.anim-typewriter{
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 13em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: black;
+  to{border-right-color: white;}
+}
+
+.section{
+  padding-top: 500px;
+}
