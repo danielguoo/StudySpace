@@ -13,14 +13,18 @@
 ActiveRecord::Schema.define(version: 20170219204424) do
 
   create_table "courses", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name"
+    t.string   "firstName"
+    t.string   "lastName"
     t.string   "email"
     t.string   "password"
+    t.string   "major"
+    t.integer  "gradYear"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

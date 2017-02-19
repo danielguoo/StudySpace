@@ -4,6 +4,6 @@ class CreateCourses < ActiveRecord::Migration[5.0]
     	t.string :name 
       	t.timestamps
     end
-    has_many :users
+    #has_many :users
   end
 end

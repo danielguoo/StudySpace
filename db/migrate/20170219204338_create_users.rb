@@ -5,10 +5,10 @@ class CreateUsers < ActiveRecord::Migration[5.0]
 	    t.string :lastName
 	    t.string :email
 	    t.string :password
-	    t.major :major
-	    t.gradYear :gradYear	
+	    t.string :major
+	    t.integer :gradYear	
 	    t.timestamps
     end
-    has_many :courses
+    #has_many :courses
   end
 end
