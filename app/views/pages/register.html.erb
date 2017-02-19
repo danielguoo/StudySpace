@@ -1,0 +1,112 @@
+<html>
+<head>
+
+  <title>StudySpace</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link type="text/css" rel="stylesheet" href="assets/stylesheets/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+
+  <!-- jQuery is required by Materialize to function -->
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('select').material_select();
+    });
+  </script>
+    <div class="col s12 heading">
+      <h1>StudySpace</h1>
+    </div>
+    <div class="register container z-depth-4">
+      <div class="container">
+        <form class="col s12">
+          <div class="row">
+            <h2>Register</h2>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="first_name" type="text" class="validate">
+              <label for="first_name">Full Name</label>
+            </div>
+            <div class="input-field col s12">
+              <input id="email" type="email" class="validate">
+              <label for="email" data-error="Incorrect email format, please try again.">Email</label>
+            </div>
+            <div class="input-field col s12">
+              <input id="password" type="password" class="validate">
+              <label for="password">Password</label>
+            </div>
+            <div class="input-field col s12">
+              <input id="confirm_password" type="password" class="validate">
+              <label for="confirm_password">Confirm Password</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="major" type="text" class="validate">
+              <label for="major">Major</label>
+            </div>
+            <div class="input-field col s6">
+              <select>
+                <option value="1">2018</option>
+                <option value="2">2019</option>
+                <option value="3">2020</option>
+                <option value="4">2021</option>
+              </select>
+              <label>Graduation Year</label>
+            </div>
+            <div class="input-field col s12">
+              <select multiple>
+                <option value="" disabled selected>Choose your classes</option>
+                <option value="1">Class 1</option>
+                <option value="2">Class 2</option>
+                <option value="3">Class 3</option>
+                <option value="1">Class 4</option>
+                <option value="2">Class 5</option>
+                <option value="3">Class 6</option>
+                <option value="1">Class 7</option>
+                <option value="2">Class 8</option>
+                <option value="3">Class 9</option>
+                <option value="1">Class 10</option>
+                <option value="2">Class 11</option>
+                <option value="3">Class 12</option>
+              </select>
+              <label>Classes</label>
+            </div>
+          </div>
+            <form action="#">
+              <div class="file-field input-field">
+                <div class="btn">
+                  <span>Upload</span>
+                  <input type="file">
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text" placeholder="Profile Picture">
+                </div>
+              </div>
+            </form>
+          <div class="row">
+            <h2>Optional Info</h2>
+            <div class="input-field col s6">
+              <input id="fb" type="text" class="validate">
+              <label for="fb">Facebook</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="phone" type="text" class="validate">
+              <label for="phone">Phone Number</label>
+            </div>
+            <button class="btn waves-effect waves-light col s12" id="register_Btn" type="submit" name="action">Register
+              <i class="material-icons right">send</i>
+            </button>
+          </div>
+          <div class="row">
+            <p id="signin">Already have an account?<%= link_to " Login!", home_path  %></p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+</body>
+</html>
