@@ -1,6 +1,6 @@
-# StudySpace- connect with classmates
+StudySpace ~ Connect with Classmates!
 
-M117 Project
+CS M117 Project
 
 Team Members:
 
@@ -11,4 +11,5 @@ Benson Han
 Daniel Guo
 
 Ryan Lo
+
 

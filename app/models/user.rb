@@ -1,6 +1,6 @@
 load 'course.rb'
 class User < ApplicationRecord
-	
+	attr_accessor :firstName, :lastName, :email, :password, :major, :gradYear, :phone 
 	def initialize(firstName, lastName, email, password, major, gradYear, facebook = nil, phone = nil)
 		@firstName = firstName.capitalize
 		@lastName = lastName.capitalize
@@ -13,65 +13,18 @@ class User < ApplicationRecord
 		@courses = Array.new
 	end
 
-	def getFirstName()
-		return @firstName
-	end
-	def setFirstName(s)
-		@firstName = s
-	end
-	def getLastName()
-		return @lastName
-	end
-	def setName(n)
-		@name = n
-	end
-
-	def getMajor()
-		return @major
-	end
-	def setMajor(n)
-		@major = n
-	end
-
-	def getGradYear()
-		return @gradYear
-	end
-	def setGradYear(n)
-		@gradYear = n
-	end
-	def getFacebook()
-		return @facebook
-	end
-	def setFacebook(n)
-		@facebook = n
-	end
-	def getEmail()
-		return @email
-	end
-	def setEmail(n)
-		@email = n
-	end
-	def getPhone()
-		return @phone
-	end
-	def setPhone(n)
-		@phone = n
-	end
-	def getPassword()
-		return @password
-	end
-	def setPassword(s)
-		@password = s 
+	def fullName()
+		return "#{@firstName} #{@lastName}"
 	end
 	def printCourses()
 		print "All courses taken: \n"
 		@courses.each do |i|
-			puts "#{i.getName} "
+			puts "#{i.name} "
 		end
 		print "\n"
 	end
 	def printUser()
-		puts "#{getFirstName} #{getLastName}, #{getEmail}, #{getPassword}, #{getMajor}, #{getGradYear}"
+		puts "#{firstName} #{lastName}, #{email}, #{password}, #{major}, #{gradYear}"
 	end
 	def dumpInfo()
 		printUser
@@ -80,7 +33,7 @@ class User < ApplicationRecord
 	#methods for courses' arrays
 	def deleteCourse(courseName)
 		@courses.each do |arg|
-			if arg.getName == coursName
+			if arg.name == courseName
 				@courses.delete(arg)
 			end
 		end
