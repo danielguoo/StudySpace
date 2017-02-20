@@ -58,12 +58,14 @@ body{
   font-size: 10px;
   text-align: center;
 }
-
+#searchTitle{
+}
 .line-1{
     position: relative;
     top: 25%;
     width: 24em;
     margin: 0 auto;
+    margin-top: 200px;
     border-right: 2px solid rgba(255,255,255,.75);
     font-size: 60px;
     text-align: center;

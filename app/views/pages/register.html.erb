@@ -97,9 +97,11 @@
               <input id="phone" type="text" class="validate">
               <label for="phone">Phone Number</label>
             </div>
-            <button class="btn waves-effect waves-light col s12" id="register_Btn" type="submit" name="action">Register
-              <i class="material-icons right">send</i>
-            </button>
+            <div class="col s4 offset-s4">
+              <button class="btn waves-effect waves-light col s12" id="register_Btn" type="submit" name="action"><%= link_to ' Register', search_path, class: 'button alt' %>
+                <i class="material-icons right">send</i>
+              </button>
+            </div>
           </div>
           <div class="row">
             <p id="signin">Already have an account?<%= link_to " Login!", home_path  %></p>
