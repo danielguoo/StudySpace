@@ -8,5 +8,6 @@ class CreateUsers < ActiveRecord::Migration[5.0]
 	    t.integer :gradYear	
 	    t.timestamps
     end
+    #has_many :courses
   end
 end
