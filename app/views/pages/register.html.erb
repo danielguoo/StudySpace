@@ -27,40 +27,96 @@
           <div class="row">
             <h2>Register</h2>
           </div>
-          <div class="col-md-6 col-md-offset-3">
-            <%= form_for(@user) do |f| %>
-            <%= f.label :name %>
-            <%= f.text_field :name %>
-
-            <%= f.label :email %>
-            <%= f.email_field :email %>
-
-            <%= f.label :password %>
-            <%= f.password_field :password %>
-
-            <%= f.label :password_confirmation, "Confirmation" %>
-            <%= f.password_field :password_confirmation %>
-
-            <%= f.submit "Create my account", class: "btn btn-primary" %>
-          <% end %>
-  </div>
           <div class="row">
-            <div class="input-field col s12">
-              <input id="first_name" type="text" class="validate">
-              <label for="first_name">Full Name</label>
+            <div class="input-field col-md-12">
+              <%= form_for(@user) do |f| %>
+              <%= f.label :name %>
+              <%= f.text_field :name %>
+              <% end %>
             </div>
-            <div class="input-field col s12">
-              <input id="email" type="email" class="validate">
-              <label for="email" data-error="Incorrect email format, please try again.">Email</label>
+          </div>
+          <div class="row">
+            <div class="input-field col-md-12">
+              <%= form_for(@user) do |f| %>
+              <%= f.label :email %>
+              <%= f.email_field :email %>
+              <% end %>
             </div>
-            <div class="input-field col s12">
-              <input id="password" type="password" class="validate">
-              <label for="password">Password</label>
+          </div>
+          <div class="row">
+            <div class="input-field col-md-12">
+              <%= form_for(@user) do |f| %>
+              <%= f.label :password %>
+              <%= f.password_field :password %>
+              <% end %>
             </div>
-            <div class="input-field col s12">
-              <input id="confirm_password" type="password" class="validate">
-              <label for="confirm_password">Confirm Password</label>
+          </div>
+          <div class="row">
+            <div class="input-field col-md-12">
+              <%= form_for(@user) do |f| %>
+              <%= f.label :password_confirmation, "Confirm Password" %>
+              <%= f.password_field :password_confirmation %>
+              <% end %>
             </div>
+          </div>
+          <div class="row">
+            <div class="input-field col-md-6">
+              <%= form_for(@user) do |f| %>
+              <%= f.label :name, "Major" %>
+              <%= f.text_field :name %>
+              <% end %>
+            </div>
+            <div class="input-field col-md-6">
+              <%= form_for(@user) do |f| %>
+              <%= f.label :name, "Graduation Year" %>
+              <%= f.text_field :name %>
+              <% end %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col-md-6">
+              <%= form_for(@user) do |f| %>
+              <%= f.label :name, "Facebook" %>
+              <%= f.text_field :name %>
+              <% end %>
+            </div>
+            <div class="input-field col-md-6">
+              <%= form_for(@user) do |f| %>
+              <%= f.label :name, "Phone Number" %>
+              <%= f.text_field :name %>
+              <% end %>
+            </div>
+          </div>
+          <div class="row">
+            <form action="#">
+              <div class="file-field input-field">
+                <div class="btn">
+                  <span>Profile Picture</span>
+                <input type="file">
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text">
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="row">
+            <div class="regBtn">
+              <div class="col-md-12">
+                <%= form_for(@user) do |f| %>
+                <%= f.submit "Create my account", class: "btn btn-primary" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <p id="signin">Already have an account?<%= link_to " Login!", home_path  %></p>
+          </div>
+        </form>
+      </div>
+    </div>
+          <!--
             <div class="input-field col s6">
               <input id="major" type="text" class="validate">
               <label for="major">Major</label>
@@ -122,8 +178,7 @@
             <p id="signin">Already have an account?<%= link_to " Login!", home_path  %></p>
           </div>
         </form>
-      </div>
-    </div>
+      </div>-->
 
 </body>
 </html>

@@ -1,5 +1,6 @@
 h1{
   text-align: center;
+  font-size: 13vh;
 }
 html{
   overflow: auto;
@@ -7,12 +8,11 @@ html{
 body{
   background: white;
 }
-
 .heading h1{
-  font-size: 13vh;
   padding-top: 20px;
   padding-bottom: 20px;
   letter-spacing: .2em;
+  font-weight: lighter;
 }
 .login h2{
   font-size: 20px;
@@ -20,11 +20,9 @@ body{
 }
 .login p{
   text-align: center;
-  font-size: 15px;
+  font-size: 12px;
 }
-.button {
-  color: white;
-}
+
 #login_Btn{
   float: right;
 }
@@ -33,16 +31,15 @@ body{
 }
 .login{
   background-color:white;
-  width: 300px;
   height: auto;
-  padding-top: 15px;
+  padding-top: 60px;
   padding-bottom: 1px;
 }
 .register{
   background-color:white;
   padding-top: 15px;
-  height: auto;
-  width: 800px;
+  padding-bottom: 15px;
+  height: inherit;
 
 }
 .register h2{
@@ -59,11 +56,21 @@ body{
   text-align: center;
 }
 
+.loginBtn{
+  text-align: center;
+  font-size: 15px;
+}
+.regBtn{
+  text-align: center;
+  font-size: 15px;
+}
+
 .line-1{
     position: relative;
     top: 25%;
     width: 24em;
     margin: 0 auto;
+    margin-top: 100px;
     border-right: 2px solid rgba(255,255,255,.75);
     font-size: 60px;
     text-align: center;
