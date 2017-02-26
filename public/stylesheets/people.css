@@ -1,0 +1,36 @@
+img{
+  height:300px;
+  width:300px;
+}
+h1{
+  text-align: center;
+  padding-top: 35px;
+  padding-bottom: 10px;
+  letter-spacing: .2em;
+  font-size: 70px;
+  font-weight: lighter;
+}
+.card{
+  margin: 20px;
+}
+#name{
+  font-size: 18px;
+}
+#major{
+  font-style: italic;
+}
+#gradyr{
+  font-style: italic;
+  float: right;
+}
+#bio{
+  font-family: 'Lato', sans-serif;
+  color: #939393;
+}
+.connectBtn{
+  text-align: center;
+}
+.btn{
+  margin-bottom: 30px;
+
+}

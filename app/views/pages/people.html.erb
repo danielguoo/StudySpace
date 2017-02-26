@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <%= stylesheet_link_tag "people" %>
 </head>
 <body>
 
@@ -17,20 +19,110 @@
     });
 
   </script>
+  <h1>
+    StudyPartners
+  </h1>
   <div class="row">
-    <div class="col s12 m7">
+    <div class="col s4 m4">
       <div class="card">
         <div class="card-image">
-          <%=image_tag("/images/bensonHan.jpg")%>
-          <span class="card-title">Benson Han</span>
+          <%=image_tag("/images/ryanLo.jpg")%>
           </img>
         </div>
         <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
+          <p id="name">Ryan Lo</p>
+          <hr>
+          <p id="gradyr">2019</p>
+          <p id="major">Computer Science</p>
+          <br>
+          <p id="bio">
+              I am a second year Computer Science major focused on artificial intelligence. I am looking to find a smart and sexy study partner.
+          </p>
         </div>
         <div class="row">
-          <div class="loginBtn">
+          <div class="connectBtn">
+            <div class="input-field col s12">
+              <%= form_for(@user) do |f| %>
+              <%= f.submit "Connect", class: "btn btn-primary" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col s4 m4">
+      <div class="card">
+        <div class="card-image">
+          <%=image_tag("/images/danielGuo.jpg")%>
+          </img>
+        </div>
+        <div class="card-content">
+          <p id="name">Daniel Guo</p>
+          <hr>
+          <p id="gradyr">2018</p>
+          <p id="major">Economics</p>
+          <br>
+          <p id="bio">
+              I am a second year Computer Science major focused on artificial intelligence. I am looking to find a smart and sexy study partner.
+          </p>
+        </div>
+        <div class="row">
+          <div class="connectBtn">
+            <div class="input-field col s12">
+              <%= form_for(@user) do |f| %>
+              <%= f.submit "Connect", class: "btn btn-primary" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col s4 m4">
+      <div class="card">
+        <div class="card-image">
+          <%=image_tag("/images/bensonHan.jpg")%>
+          </img>
+        </div>
+        <div class="card-content">
+          <p id="name">Benson Han</p>
+          <hr>
+          <p id="gradyr">2025</p>
+          <p id="major">League of Legends</p>
+          <br>
+          <p id="bio">
+              I am a second year Computer Science major focused on artificial intelligence. I am looking to find a smart and sexy study partner.
+          </p>
+        </div>
+        <div class="row">
+          <div class="connectBtn">
+            <div class="input-field col s12">
+              <%= form_for(@user) do |f| %>
+              <%= f.submit "Connect", class: "btn btn-primary" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col s4 m4">
+      <div class="card">
+        <div class="card-image">
+          <%=image_tag("/images/austinLee.jpg")%>
+          </img>
+        </div>
+        <div class="card-content">
+          <p id="name">Austin Lee</p>
+          <hr>
+          <p id="gradyr">2019</p>
+          <p id="major">Computer Science</p>
+          </p>
+          <br>
+          <p id="bio">
+              I am a second year Computer Science major focused on artificial intelligence. I am looking to find a smart and sexy study partner.
+          </p>
+        </div>
+        <div class="row">
+          <div class="connectBtn">
             <div class="input-field col s12">
               <%= form_for(@user) do |f| %>
               <%= f.submit "Connect", class: "btn btn-primary" %>

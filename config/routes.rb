@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/home', to:'pages#home'
   get '/search', to:'pages#search'
   get '/people', to:'pages#people'
+  get '/profilepage', to:'pages#profilepage'
   resources :users
 
 end

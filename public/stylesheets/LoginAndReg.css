@@ -8,12 +8,15 @@ html{
 body{
   background: white;
 }
+.container{
+  margin-bottom: 60px;
+}
 .heading h1{
   padding-top: 35px;
   padding-bottom: 20px;
   letter-spacing: .2em;
   font-weight: lighter;
-  font-size: 55px;
+  font-size: 75px;
 }
 .login h2{
   font-size: 20px;
@@ -34,14 +37,12 @@ body{
   background-color:white;
   height: auto;
   padding-top: 60px;
-  padding-bottom: 1px;
 }
 .register{
   background-color:white;
   padding-top: 15px;
-  padding-bottom: 15px;
+  padding-bottom: 1px;
   height: inherit;
-
 }
 .register h2{
   font-size: 20px;

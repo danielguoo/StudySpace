@@ -1,0 +1,58 @@
+.container {
+  padding-top: 10vh;
+}
+#profile {
+  background-color: white;
+  height: 80vh;
+}
+.profilepic {
+  padding-top: 5vh;
+  max-width: 30vh;
+  max-heigh: 30vh;
+  margin: 0 auto;
+}
+#info {
+  padding-top: .5vh;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+.name {
+  font-family: "Pacifico", sans-serif;
+  font-size: large;
+}
+.links {
+  text-align: center;
+}
+#icons {
+  padding-top: 1.5vh;
+}
+.facebook a:link,
+.facebook a:visited,
+.facebook a:hover,
+.facebook a:active {
+  color: #3B5998;
+}
+.google a:link,
+.google a:visited,
+.google a:hover,
+.google a:active {
+  color: #D34836;
+}
+.linkedin a:link,
+.linkedin a:visited,
+.linkedin a:hover,
+.linkedin a:active {
+  color: #0077B5;
+}
+.email, .phone {
+  padding-top: 1.5vh;
+  padding-bottom: 1.5vh;
+  font-size: small;
+}
+#message {
+  background-color: white;
+  height: 80vh;
+}
+#text {
+  height: 60vh;
+}
