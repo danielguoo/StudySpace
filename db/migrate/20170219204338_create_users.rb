@@ -7,6 +7,8 @@ class CreateUsers < ActiveRecord::Migration[5.0]
 	    t.string :password, :limit => 50, :null => false
 	    t.string :major
 	    t.integer :gradYear
+	    t.string :facebook
+	    t.string :phone
 	    t.integer :courses, array: true, default: []	
 	    t.timestamps
     end
