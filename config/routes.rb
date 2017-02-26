@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
   root 'pages#home'
   get '/register', to:'pages#register'
   get '/home', to:'pages#home'
