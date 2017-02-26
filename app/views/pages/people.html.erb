@@ -3,10 +3,8 @@
 
   <title>StudySpace</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <link type="text/css" rel="stylesheet" href="assets/stylesheets/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
 </head>
 <body>
 
@@ -23,17 +21,24 @@
     <div class="col s12 m7">
       <div class="card">
         <div class="card-image">
-          <img src="images/sample-1.jpg">
-            <span class="card-title">Card Title</span>
+          <%=image_tag("/images/bensonHan.jpg")%>
+          <span class="card-title">Benson Han</span>
+          </img>
         </div>
         <div class="card-content">
           <p>I am a very simple card. I am good at containing small bits of information.
               I am convenient because I require little markup to use effectively.</p>
-          </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-              </div>
+        </div>
+        <div class="row">
+          <div class="loginBtn">
+            <div class="input-field col s12">
+              <%= form_for(@user) do |f| %>
+              <%= f.submit "Connect", class: "btn btn-primary" %>
+              <% end %>
             </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </body>

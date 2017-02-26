@@ -9,4 +9,7 @@ class PagesController < ApplicationController
   end
   def search
   end
+  def people
+    @user = User.new
+  end
 end

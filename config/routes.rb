@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/register', to:'pages#register'
   get '/home', to:'pages#home'
   get '/search', to:'pages#search'
+  get '/people', to:'pages#people'
   resources :users
 
 end
