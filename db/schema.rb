@@ -22,11 +22,23 @@ ActiveRecord::Schema.define(version: 20170226080604) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
+<<<<<<< HEAD
     t.string   "email"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
+=======
+    t.string   "email",                 default: "", null: false
+    t.string   "password",   limit: 50,              null: false
+    t.string   "major"
+    t.integer  "gradYear"
+    t.string   "facebook"
+    t.string   "phone"
+    t.integer  "courses"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+>>>>>>> c8a0c33a918b57a583851ca09a606f9162dda3bd
   end
 
 end
