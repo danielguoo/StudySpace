@@ -1,6 +1,6 @@
 class CreateUsers < ActiveRecord::Migration[5.0]
   def change
-    create_table :users do |t| 
+    create_table :users do |t|
     	t.integer :userID
 	   	t.string :name
 	    t.string :email, :default => "", :null => false
@@ -9,10 +9,10 @@ class CreateUsers < ActiveRecord::Migration[5.0]
 	    t.integer :gradYear
 	    t.string :facebook
 	    t.string :phone
-	    t.integer :courses, array: true, default: []	
+	    t.integer :courses, array: true, default: []
 	    t.timestamps
     end
     #has_many :courses
-    
+
   end
 end

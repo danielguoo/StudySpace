@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 20170219204424) do
     t.string   "password",   limit: 50,              null: false
     t.string   "major"
     t.integer  "gradYear"
+    t.string   "facebook"
+    t.string   "phone"
     t.integer  "courses"
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
