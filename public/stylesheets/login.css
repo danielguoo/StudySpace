@@ -1,0 +1,46 @@
+h1{
+  text-align: center;
+}
+html{
+  overflow: auto;
+}
+body{
+  background: white;
+}
+.heading h1{
+  letter-spacing: .3em;
+  font-weight: lighter;
+  font-size: 80px;
+  padding-bottom: 10px;
+}
+.login h2{
+  font-size: 25px;
+  padding: 0px;
+  margin: 0px;
+/*  margin-left: 50px;*/
+  padding-bottom: 10px;
+  text-align: center;
+  color: #80cbc4;
+  letter-spacing: .2em;
+  font-style: italic;
+}
+.login p{
+  text-align: center;
+  font-size: 12px;
+  padding-top: 10px;
+}
+.loginBtn{
+  text-align: center;
+}
+.login{
+  background-color:white;
+  padding-top: 40px;
+  padding-bottom: 5px;
+  width: 600px;
+}
+.btn-large{
+  width: 500px;
+  font-size: 30px;
+  letter-spacing: .2em;
+  border-radius: 25px;
+}

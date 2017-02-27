@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <%= stylesheet_link_tag "LoginAndReg" %>
+  <%= stylesheet_link_tag "login" %>
 
 </head>
 <body>
@@ -23,10 +23,10 @@
     <h1>StudySpace</h1>
   </div>
   <div class="login container z-depth-4">
-    <div class="container">
       <form class="col s12">
+        <h2>Log in to StudySpace</h2>
         <div class="row">
-          <div class="input-field col s12">
+          <div class="input-field col s10 offset-s1">
             <%= form_for(@user) do |f| %>
             <%= f.label :email %>
             <%= f.email_field :email %>
@@ -34,7 +34,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="input-field col s12">
+          <div class="input-field col s10 offset-s1">
             <%= form_for(@user) do |f| %>
             <%= f.label :password %>
             <%= f.password_field :password %>
@@ -43,21 +43,17 @@
         </div>
         <div class="row">
           <div class="loginBtn">
-            <div class="input-field col s12">
+            <div class="input-field col m12">
               <%= form_for(@user) do |f| %>
-              <%= f.submit "Login", class: "btn btn-primary" %>
-
+              <%= f.submit "Login", class: "btn-large btn-primary" %>
               <% end %>
             </div>
           </div>
         </div>
         <div class="row">
           <p id="register">Don't have an account? <%= link_to "Register Here!", register_path  %></p>
-          <p id="register">People's page <%= link_to "Click!", people_path  %></p>
-          <p id="register">Specific person's page <%= link_to " Click!", profilepage_path  %></p>
         </div>
       </form>
-    </div>
   </div>
 
 </body>

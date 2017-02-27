@@ -1,6 +1,5 @@
 h1{
   text-align: center;
-  font-size: 13vh;
 }
 html{
   overflow: auto;
@@ -9,45 +8,26 @@ body{
   background: white;
 }
 .container{
-  margin-bottom: 60px;
-}
-.heading h1{
-  padding-top: 35px;
-  padding-bottom: 20px;
-  letter-spacing: .2em;
-  font-weight: lighter;
-  font-size: 75px;
-}
-.login h2{
-  font-size: 20px;
-  text-align: center;
-}
-.login p{
-  text-align: center;
-  font-size: 12px;
+  margin-bottom: 20px;
 }
 
-#login_Btn{
-  float: right;
-}
 #register_Btn{
   float: right;
-}
-.login{
-  background-color:white;
-  height: auto;
-  padding-top: 60px;
 }
 .register{
   background-color:white;
   padding-top: 15px;
   padding-bottom: 1px;
-  height: inherit;
 }
 .register h2{
   font-size: 20px;
   text-align: center;
   font-style: italic;
+  text-align: center;
+  color: #80cbc4;
+  letter-spacing: .2em;
+  font-style: italic;
+
 }
 #signin{
   font-size: 10px;
@@ -65,36 +45,4 @@ body{
 .regBtn{
   text-align: center;
   font-size: 15px;
-}
-
-.line-1{
-    position: relative;
-    top: 25%;
-    width: 24em;
-    margin: 0 auto;
-    margin-top: 100px;
-    border-right: 2px solid rgba(255,255,255,.75);
-    font-size: 60px;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    transform: translateY(-50%);
-}
-
-/* Animation */
-.anim-typewriter{
-  animation: typewriter 4s steps(44) 1s 1 normal both,
-             blinkTextCursor 500ms steps(44) infinite normal;
-}
-@keyframes typewriter{
-  from{width: 0;}
-  to{width: 13em;}
-}
-@keyframes blinkTextCursor{
-  from{border-right-color: black;
-  to{border-right-color: white;}
-}
-
-.section{
-  padding-top: 500px;
 }

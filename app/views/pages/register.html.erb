@@ -29,12 +29,41 @@
           </div>
           <div class="row">
             <div class="input-field col-md-12">
-              <%= form_for(@user) do |f| %>
-              <%= f.label :name %>
-              <%= f.text_field :name %>
-              <% end %>
+              <%= render '/shared/error_messages' %>
+                <input id="user_name" name="person[name]" type="text" class="validate">
+                <label class="control-label" for="user_name">Name</label>
             </div>
           </div>
+          <div class="row">
+            <div class="input-field col-md-12">
+              <%= render '/shared/error_messages' %>
+                <input id="user_email" name="person[email]" type="text" class="validate">
+                <label class="control-label" for="user_email">Email</label>
+            </div>
+          </div>
+          <input name="commit" type="submit" value="Create" />
+
+      </div>
+    </div>
+          <!--        <%= form_for(@user) do |f| %>
+                    <%= render '/shared/error_messages' %>
+                    <%= f.label :name %>
+                    <%= f.text_field :name %>
+
+
+                    <%= f.label :email, "" %>
+                    <%= f.email_field :email, class: '' %>
+
+                    <%= f.label :password, "" %>
+                    <%= f.password_field :password, class: '' %>
+
+                    <%= f.label :password_confirmation, "" %>
+                    <%= f.password_field :password_confirmation, class: '' %>
+
+                    <%= f.submit "Create my account", class: "btn btn-primary" %>
+                  <% end %>-->
+
+          <!--
           <div class="row">
             <div class="input-field col-md-12">
               <%= form_for(@user) do |f| %>
@@ -62,14 +91,14 @@
           <div class="row">
             <div class="input-field col-md-6">
               <%= form_for(@user) do |f| %>
-              <%= f.label :major, "Major" %>
-              <%= f.text_field :major %>
+              <%= f.label :name, "Major" %>
+              <%= f.text_field :name %>
               <% end %>
             </div>
             <div class="input-field col-md-6">
               <%= form_for(@user) do |f| %>
-              <%= f.label :gradYear, "Graduation Year" %>
-              <%= f.text_field :gradYear %>
+              <%= f.label :name, "Graduation Year" %>
+              <%= f.text_field :name %>
               <% end %>
             </div>
           </div>
@@ -127,7 +156,6 @@
         </form>
       </div>
     </div>
-          <!--
             <div class="input-field col s6">
               <input id="major" type="text" class="validate">
               <label for="major">Major</label>
@@ -187,9 +215,10 @@
           </div>
           <div class="row">
             <p id="signin">Already have an account?<%= link_to " Login!", home_path  %></p>
-          </div>
+          </div>-->
         </form>
-      </div>-->
+      </div>
+    </div>
 
 </body>
 </html>

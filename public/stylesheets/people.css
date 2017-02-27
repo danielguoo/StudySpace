@@ -1,4 +1,4 @@
-img{
+/*img{
   height:300px;
   width:300px;
 }
@@ -18,10 +18,12 @@ h1{
 }
 #major{
   font-style: italic;
+  color:#80cbc4;
 }
 #gradyr{
   font-style: italic;
   float: right;
+  color:#80cbc4;
 }
 #bio{
   font-family: 'Lato', sans-serif;
@@ -32,5 +34,5 @@ h1{
 }
 .btn{
   margin-bottom: 30px;
-
 }
+*/
