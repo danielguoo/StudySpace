@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/search', to:'pages#search'
   get '/people', to:'pages#people'
   get '/profilepage', to:'pages#profilepage'
+  get '/signup', to: 'users#new'
   resources :users
 
 end
