@@ -5,7 +5,8 @@ class UserTest < ActiveSupport::TestCase
   #   assert true
   # end
   def setup
-  	@user = User.new(name: "Example User", email: "user@example.com", password: "foobar", password_confirmation: "foobar", major: "computer science")
+  	@user = User.new(name: "Example User", email: "user@example.com", password: "foobar", password_confirmation: "foobar", 
+      major: "computer science", gradyear: 2019)
   end
 
   test "should be valid" do
@@ -80,10 +81,31 @@ class UserTest < ActiveSupport::TestCase
     @user.major = "a" * 26
     assert_not @user.valid?
   end
-=begin
-  test "gradYear should be present" do
-    @user.gradYear = ""
+
+  test "gradyear should be present" do
+    @user.gradyear = " " * 4
     assert_not @user.valid?
+  end
+
+  test "gradyear should not be too short" do
+    @user.gradyear = "a" * 3
+    assert_not @user.valid?
+  end
+
+  test "gradyear validation should accept valid addresses" do
+    valid_years = %w[2019 2012 1979 ]
+    valid_years.each do |v|
+      @user.gradyear = v
+      assert @user.valid?, "#{v.inspect} should be valid"
+    end
+  end
+=begin
+  test "gradyear validation should reject invalid addresses" do
+    invalid_years = %w[1950 2050 2027]
+    invalid_years.each do |v|
+      @user.gradyear = v
+      assert_not @user.valid?, "#{v.inspect} should be invalid"
+    end
   end
 =end
 

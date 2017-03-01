@@ -5,18 +5,18 @@ class User < ApplicationRecord
   	validates :email, presence: true, length: { maximum: 255 },
   		format: { with: VALID_EMAIL_REGEX },
   		uniqueness: { case_sensitive: false }
+    has_secure_password
   	validates :password, presence: true, length: { minimum: 6 }
 
   	#validates :major, presence: true, length: {maximum: 25}
   	#validates :gradYear, presence: true, length: {minimum: 4}, length: {maximum: 4}
   	
-    #VALID_YEAR_REGEX = /^\d{4}$/
+  VALID_YEAR_REGEX = /^(19[5-9]\d|20[0-1]\d|2020)$/
     validates :major, presence: true, length: {maximum: 25}
-  	#validates :gradYear, presence: true, format: { with: VALID_YEAR_REGEX }
+  	validates :gradyear, presence: true, length: {minimum: 4},
+      format: { with: VALID_YEAR_REGEX }
     
-    #validates :shortBio, length: {maximum: 300}
-  	:facebook
-  	:phone
+  #validates :shortBio, presence: true, length: {maximum: 300}
+  :facebook
 
-  	has_secure_password
 end
