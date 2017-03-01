@@ -8,9 +8,10 @@ class User < ApplicationRecord
     has_secure_password
   	validates :password, presence: true, length: { minimum: 6 }
   validates :major, presence: true, length: {maximum: 25}
-  VALID_YEAR_REGEX = /^\d{4}$/  #/^(19[5-9]\d|20[0-1]\d|2020)$/
+  validates :bio, presence: true, length: {maximum: 250}
+  VALID_YEAR_REGEX = /^(19[5-9]\d|20[0-1]\d|2020)$/ #1950 - 2020
   	validates :gradyear, presence: true, length: {minimum: 4},
-      format: { with: VALID_YEAR_REGEX }
+      format: { with: VALID_YEAR_REGEX, multiline: true }
     
   
   validates :facebook, length: {maximum: 255 }

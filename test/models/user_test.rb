@@ -114,13 +114,13 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "bio should be present" do
-    invalid = " " * 300
+    invalid = " " * 250
     @user.bio = invalid
     assert_not @user.valid?, "#{invalid.inspect} should be invalid"
   end
 
   test "bio should not be too long" do
-    @user.bio = "a" * 301
+    @user.bio = "a" * 251
     assert_not @user.valid?
   end
 
