@@ -50,37 +50,22 @@
         </div>
         <div class="row">
           <%= f.label :major %>
-          <input id="user_major" name="person[major]" type="text" class="validate">
+          <%= f.text_field :major, class: 'form-control' %>
+          <!--<input id="user_major" name="person[major]" type="text" class="validate">-->
         </div>
         <div class="row">
-          <%= f.label :gradYear, "Graduation Year" %>
-          <input id="user_year" name="person[gradYear]" type="text" class="validate">
+          <%= f.label :gradyear, "Graduation Year" %>
+          <%= f.number_field :gradyear, class: 'form-control' %>
+          <!--<input id="user_year" name="person[gradYear]" type="text" class="validate">-->
         </div>
         <div class="row">
-          <label for="bio">Bio</label>
-          <%= text_area_tag(:bio, nil, class: 'materialize-textarea') %>
+          <!--<label for="bio">Bio</label>-->
+          <!--insert the last line for bio that was originally here here-->
+          <%= f.label :bio, "Short Bio" %>
+          <%= f.text_field :bio, class: 'form-control' %>
         </div>
-        <div class="row">
-          <form action="#">
-            <div class="file-field input-field">
-              <div class="btn">
-                <span>Upload</span>
-                <input type="file">
-              </div>
-              <div class="file-path-wrapper">
-                <input class="file-path validate" type="text"  placeholder="Upload profile picture here">
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="row">
-          <%= f.label :classes, "Classes" %>
-          <%= select_tag "classes[]", "<option>CS111</option><option>CS143</option><option>CS144</option>".html_safe, multiple: true, prompt: "Select Your Classes"%>
-        </div>
-        <div class="row">
-          <%= f.label :email, "Facebook (Optional)" %> <!-- Label should be facebook -->
-          <%= url_field(:user, :email) %>
-        </div>
+        <!-- profile pic goes here-->
+        <!-- Courses and facebook go here-->
         <div class="row regBtn">
           <div class="col-md-12">
           <%= f.submit "Create my account", class: "btn-large btn-primary" %>
