@@ -30,25 +30,56 @@
     <div class="row">
       <h2>Register to start finding study partners</h2>
     </div>
-    <div class="row">
-      <div class="col-md-12">
-        <%= form_for(@user, url: signup_path) do |f| %>
-        <%= render '/shared/error_messages' %>
+    <%= form_for(@user, url: signup_path) do |f| %>
+    <%= render '/shared/error_messages' %>
         <div class="row">
-            <%= f.label :name %>
-            <%= f.text_field :name, class: 'form-control' %>
+          <%= f.label :name %>
+          <%= f.text_field :name, class: 'form-control' %>
         </div>
         <div class="row">
-            <%= f.label :email %>
-            <%= f.email_field :email, class: 'form-control' %>
+          <%= f.label :email %>
+          <%= f.email_field :email, class: 'form-control' %>
         </div>
         <div class="row">
           <%= f.label :password %>
           <%= f.password_field :password, class: 'form-control' %>
         </div>
         <div class="row">
-          <%= f.label :password_confirmation, "Confirmation" %>
+          <%= f.label :password_confirmation, "Confirm Password" %>
           <%= f.password_field :password_confirmation, class: 'form-control' %>
+        </div>
+        <div class="row">
+          <%= f.label :major %>
+          <input id="user_major" name="person[major]" type="text" class="validate">
+        </div>
+        <div class="row">
+          <%= f.label :gradYear, "Graduation Year" %>
+          <input id="user_year" name="person[gradYear]" type="text" class="validate">
+        </div>
+        <div class="row">
+          <label for="bio">Bio</label>
+          <%= text_area_tag(:bio, nil, class: 'materialize-textarea') %>
+        </div>
+        <div class="row">
+          <form action="#">
+            <div class="file-field input-field">
+              <div class="btn">
+                <span>Upload</span>
+                <input type="file">
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text"  placeholder="Upload profile picture here">
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="row">
+          <%= f.label :classes, "Classes" %>
+          <%= select_tag "classes[]", "<option>CS111</option><option>CS143</option><option>CS144</option>".html_safe, multiple: true, prompt: "Select Your Classes"%>
+        </div>
+        <div class="row">
+          <%= f.label :email, "Facebook (Optional)" %> <!-- Label should be facebook -->
+          <%= url_field(:user, :email) %>
         </div>
         <div class="row regBtn">
           <div class="col-md-12">
@@ -56,11 +87,9 @@
           </div>
         </div>
         <% end %>
-      </div>
-    </div>
-    <div class="row">
-      <p id="hasAccount">Already have an account? <%= link_to "Log in here!", home_path  %></p>
-    </div>
+        <div class="row">
+          <p id="hasAccount">Already have an account? <%= link_to "Log in here!", home_path  %></p>
+        </div>
   </div>
 </div>
 </body>
