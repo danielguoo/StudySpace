@@ -10,13 +10,13 @@ class User < ApplicationRecord
 
   	#validates :major, presence: true, length: {maximum: 25}
   	#validates :gradYear, presence: true, length: {minimum: 4}, length: {maximum: 4}
-  	
-  VALID_YEAR_REGEX = /^(19[5-9]\d|20[0-1]\d|2020)$/
-    validates :major, presence: true, length: {maximum: 25}
+  #validates :bio, presence: true, length: {maximum: 300}
+  validates :major, presence: true, length: {maximum: 25}
+  VALID_YEAR_REGEX = /^\d{4}$/  #/^(19[5-9]\d|20[0-1]\d|2020)$/
   	validates :gradyear, presence: true, length: {minimum: 4},
       format: { with: VALID_YEAR_REGEX }
     
-  #validates :shortBio, presence: true, length: {maximum: 300}
+  
   :facebook
 
 end

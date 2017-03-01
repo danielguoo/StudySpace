@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170301004553) do
+ActiveRecord::Schema.define(version: 20170301011331) do
 
   create_table "courses", force: :cascade do |t|
     t.integer  "courseID"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20170301004553) do
     t.string   "password_digest"
     t.string   "major"
     t.integer  "gradyear"
+    t.text     "bio"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
