@@ -9,8 +9,12 @@ class User < ApplicationRecord
 
   	#validates :major, presence: true, length: {maximum: 25}
   	#validates :gradYear, presence: true, length: {minimum: 4}, length: {maximum: 4}
-  	:major
-  	:gradYear
+  	
+    #VALID_YEAR_REGEX = /^\d{4}$/
+    validates :major, presence: true, length: {maximum: 25}
+  	#validates :gradYear, presence: true, format: { with: VALID_YEAR_REGEX }
+    
+    #validates :shortBio, length: {maximum: 300}
   	:facebook
   	:phone
 

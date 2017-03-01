@@ -5,22 +5,21 @@ class UserTest < ActiveSupport::TestCase
   #   assert true
   # end
   def setup
-  	@user = User.new(name: "Example User", email: "user@example.com", password: "foobar", password_confirmation: "foobar")
+  	@user = User.new(name: "Example User", email: "user@example.com", password: "foobar", password_confirmation: "foobar", major: "computer science")
   end
 
   test "should be valid" do
     assert @user.valid?
   end
-
-  test "name should be present" do
-  	@user.name = ""
+  test "name should be present (non blank)" do
+  	@user.name = " " * 50
     assert_not @user.valid?
   end
-  test "email should be present" do
-    @user.email = ""
+  test "email should be present(non blank)" do
+    @user.email = " " * 255
     assert_not @user.valid?
   end
-
+  
   test "name should not be too long" do
     @user.name = "a" * 51
     assert_not @user.valid?
@@ -71,5 +70,21 @@ class UserTest < ActiveSupport::TestCase
     @user.password = @user.password_confirmation = "a" * 5
     assert_not @user.valid?
   end
+
+
+  test "major should be present (non blank)" do
+    @user.major = " " * 25
+    assert_not @user.valid?
+  end
+  test "major should not be too long" do
+    @user.major = "a" * 26
+    assert_not @user.valid?
+  end
+=begin
+  test "gradYear should be present" do
+    @user.gradYear = ""
+    assert_not @user.valid?
+  end
+=end
 
 end
