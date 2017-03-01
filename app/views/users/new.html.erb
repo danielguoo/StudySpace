@@ -66,6 +66,13 @@
         </div>
         <!-- profile pic goes here-->
         <!-- Courses and facebook go here-->
+
+        <div class="row">
+          <!--<label for="bio">Bio</label>-->
+          <!--insert the last line for bio that was originally here here-->
+          <%= f.label :facebook, "Facebook (Optional)" %>
+          <%= f.text_field :facebook, class: 'form-control' %>
+        </div>
         <div class="row regBtn">
           <div class="col-md-12">
           <%= f.submit "Create my account", class: "btn-large btn-primary" %>
