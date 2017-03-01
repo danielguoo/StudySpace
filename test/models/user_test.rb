@@ -6,7 +6,7 @@ class UserTest < ActiveSupport::TestCase
   # end
   def setup
   	@user = User.new(name: "Example User", email: "user@example.com", password: "foobar", password_confirmation: "foobar", 
-      major: "computer science", gradyear: 2019, bio: "four score and seven years ago....")
+      major: "computer science", gradyear: 2019, bio: "four score and seven years ago....", facebook: "")
   end
 
   test "should be valid" do
@@ -23,6 +23,11 @@ class UserTest < ActiveSupport::TestCase
   
   test "name should not be too long" do
     @user.name = "a" * 51
+    assert_not @user.valid?
+  end
+
+  test "facebook should not be too long" do
+    @user.facebook = "a" * 256
     assert_not @user.valid?
   end
 
