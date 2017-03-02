@@ -23,34 +23,34 @@
     <h1>Study<span class="spaceColor">Space</span></h1>
   </div>
   <div class="login container z-depth-4">
-      <form class="col s12">
+
         <h2>Log in to StudySpace</h2>
         <%= form_for(:session, url: login_path) do |f| %>
           <div class="row">
             <div class="input-field col s10 offset-s1">
-            <%= f.label :email %>
-            <%= f.email_field :email, class: 'form-control' %>
+              <%= f.label :email %>
+              <%= f.email_field :email, class: 'form-control' %>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s10 offset-s1">
               <%= f.label :password %>
-            <%= f.password_field :password, class: 'form-control' %>
+              <%= f.password_field :password, class: 'form-control' %>
             </div>
           </div>
 
           <div class="row">
             <div class="loginBtn">
-              <div class="input-field col m12">
+
                 <%= f.submit "Login", class: "btn-large btn-primary" %>
-              </div>
+
             </div>
           </div>
-      <% end %>
+        <% end %>
       <div class="row">
           <p id="register">Don't have an account? <%= link_to "Register Here!", signup_path  %></p>
         </div>
-      </form>
+
   </div>
 
 </body>

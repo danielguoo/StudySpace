@@ -19,7 +19,7 @@ gem 'bootstrap-sass', '3.2.0.2'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick', '~> 4.6', '>= 4.6.1'
 gem 'fog', '~> 1.38'
-
+gem 'rails-controller-testing', '~> 1.0', '>= 1.0.1'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
