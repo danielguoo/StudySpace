@@ -1,12 +1,81 @@
-<!--<p> <%= @user.name %>, <%= @user.email %> </p> -->
-<% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
-</div>
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+  <script src="https://use.fontawesome.com/d29dec308b.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Montserrat" rel="stylesheet">
+  <script src="profilepage.js"></script>
+  <%= stylesheet_link_tag "profilepage" %>
+  <title>Profile</title>
+</head>
+<body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+  <div class="container">
+    <div class="row">
+      <div class="col s4">
+        <div class="z-depth-2" id="profile">
+          <div class="profilepic">
+            <img class="circle responsive-img" src="/images/austinLee.jpg">
+          </div>
+          <div class="container" id="info">
+            <p class="name">
+              <%= @user.name %>
+            </p>
+            <div class="links">
+              <div class="row" id="icons">
+                <div class="col s4">
+                  <div class="facebook">
+                    <a href="https://www.facebook.com/8enson">
+                      <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="col s4">
+                  <div class="google">
+                    <a href="https://plus.google.com/u/0/115244788777779861342">
+                      <i class="fa fa-google-plus-official fa-2x" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="col s4">
+                  <div class="linkedin">
+                    <a href="https://www.linkedin.com/in/8enson/">
+                      <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <hr />
+              <div class="email">
+                <%= @user.email %>
+              </div>
+              <hr />
+              <div class="phone">
+                503-704-6558 (need migration for this lol)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col s8">
+        <div class="z-depth-2" id="message">
+          <div class="container" id="text">
+            <div class="row">
+             <form class="col s12">
+               <div class="row">
+                 <div class="input-field col s12">
+                   <textarea id="textarea1" class="materialize-textarea"></textarea>
+                   <label for="textarea1">Write a message here...</label>
+                 </div>
+               </div>
+             </form>
+           </div>
+           <div class="contactbtn">
+             <a class="waves-effect waves-light btn">Send!</a>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
