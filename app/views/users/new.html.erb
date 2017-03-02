@@ -78,7 +78,12 @@
           </div>          
         </div>
 
-        <!-- Courses and facebook go here-->
+        <!-- Courses goes here(i think u might want to move this to another form_for loop that deals with classes (just put the user into the course's array that user picked-->
+        <div class="row">
+          <%= f.label :courses, "Courses" %>
+          <%= select_tag "courses[]", "<option>CS111</option><option>CS32</option><option>CS143</option><option>CSM117</option>".html_safe, multiple: true, prompt: "Select Your Classes"%>
+        </div>        
+
 
         <div class="row">
           <!--<label for="bio">Bio</label>-->
