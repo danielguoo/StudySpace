@@ -1,2 +1,57 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<html>
+<head>
+
+  <title>StudySpace</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <%= stylesheet_link_tag "login" %>
+
+</head>
+<body>
+
+  <!-- jQuery is required by Materialize to function -->
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('select').material_select();
+    });
+
+  </script>
+  <div class="col s12 heading">
+    <h1>Study<span class="spaceColor">Space</span></h1>
+  </div>
+  <div class="login container z-depth-4">
+      <form class="col s12">
+        <h2>Log in to StudySpace</h2>
+        <%= form_for(:session, url: login_path) do |f| %>
+          <div class="row">
+            <div class="input-field col s10 offset-s1">
+            <%= f.label :email %>
+            <%= f.email_field :email, class: 'form-control' %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s10 offset-s1">
+              <%= f.label :password %>
+            <%= f.password_field :password, class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="loginBtn">
+              <div class="input-field col m12">
+                <%= f.submit "Login", class: "btn-large btn-primary" %>
+              </div>
+            </div>
+          </div>
+      <% end %>
+      <div class="row">
+          <p id="register">Don't have an account? <%= link_to "Register Here!", signup_path  %></p>
+        </div>
+      </form>
+  </div>
+
+</body>
+</html>
