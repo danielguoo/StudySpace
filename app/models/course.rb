@@ -1,8 +1,6 @@
 class Course < ApplicationRecord
     attr_reader :name
-	def initialize(name)
-		@name = name.upcase
-		@students = Array.new
-	end
+    has_and_belongs_to_many :users
+
 	
 end
