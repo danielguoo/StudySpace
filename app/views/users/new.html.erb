@@ -51,21 +51,16 @@
         <div class="row">
           <%= f.label :major %>
           <%= f.text_field :major, class: 'form-control' %>
-          <!--<input id="user_major" name="person[major]" type="text" class="validate">-->
         </div>
         <div class="row">
           <%= f.label :gradyear, "Graduation Year" %>
           <%= f.number_field :gradyear, class: 'form-control' %>
-          <!--<input id="user_year" name="person[gradYear]" type="text" class="validate">-->
         </div>
         <div class="row">
-          <!--<label for="bio">Bio</label>-->
-          <!--insert the last line for bio that was originally here here-->
           <%= f.label :bio, "Short Bio" %>
           <%= f.text_area :bio, class: 'form-control', class: 'materialize-textarea' %>
           
         </div>
-        <!-- profile pic goes here-->
         <div class="row">
           <div class="file-field input-field">
             <div class="btn">
@@ -86,8 +81,6 @@
 
 
         <div class="row">
-          <!--<label for="bio">Bio</label>-->
-          <!--insert the last line for bio that was originally here here-->
           <%= f.label :facebook, "Facebook Url (Optional)" %>
           <%= f.text_field :facebook, class: 'form-control' %>
         </div>
