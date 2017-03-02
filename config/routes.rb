@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get 'users/new'
 
-  root 'pages#home'
+  root 'sessions#new'
   get '/home', to:'sessions#new'
   get '/search', to:'pages#search'
   get '/people', to:'pages#people'
@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   post '/signup',  to: 'users#create'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
-  delete '/logout',  to: 'sessions#destroy'
+  #delete '/logout',  to: 'sessions#destroy' ## this breaks stuff idk why
+  get '/logout' => :destroy, to: 'sessions#new'
   resources :users
 
 end
