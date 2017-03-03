@@ -8,6 +8,10 @@ class CoursesController < ApplicationController
   		@course = Course.new(course_params)
   	end
 
+    def show
+      @course= Course.find(params[:id])
+    end
+
     def course_params
       params.require(:course).permit(:name, :user_ids =>[])
     end

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Course
+		</title>
+	</head>
+	<body>
+		<h1>
+			<%= @course[:name] %>
+		</h1>
+		<p>
+			<%= link_to(@course.users[0][:name],user_path(@course.users[0][:id])) %>
+		</p>
+</body>
+</html>
