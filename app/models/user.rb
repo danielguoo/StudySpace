@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-<<<<<<< HEAD
+
   has_and_belongs_to_many :courses
   attr_reader :name, :email, :major, :bio, :gradyear, :avatar, :facebook
 	before_save { self.email = email.downcase }
