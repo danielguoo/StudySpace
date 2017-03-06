@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
+  #get 'static_pages/home'
+  #get 'users/new'
 
-  get 'users/new'
-
-  root 'pages#home'
+  root 'static_pages#home'
   get '/register', to:'pages#register'
   get '/home', to:'pages#home'
   get '/search', to:'pages#search'
