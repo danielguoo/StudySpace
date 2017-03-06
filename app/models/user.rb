@@ -1,5 +1,8 @@
 class User < ApplicationRecord
+<<<<<<< HEAD
 
+=======
+>>>>>>> 86c4903db11944736a06c9af218c9815d284b0a3
   has_and_belongs_to_many :courses
   #attr_reader :name, :email, :major, :bio, :gradyear, :avatar, :facebook
 	before_save { self.email = email.downcase }

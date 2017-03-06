@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy' ## this breaks stuff idk why
   #get '/logout' => :destroy, to: 'sessions#new'
   resources :users
-
+  resources :courses
 end
