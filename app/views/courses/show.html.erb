@@ -6,10 +6,14 @@
 	</head>
 	<body>
 		<h1>
-			<%= @course[:name] %>
+			<%= @course.name %>
 		</h1>
 		<p>
-			<%= link_to(@course.users[0][:name],user_path(@course.users[0][:id])) %>
+			<h4> Users in this class: </h4>
+            <% (0..@course.users.length - 1).each do |i| %>
+              <%=link_to(@course.users[i].name, user_path(@course.users[i].id)) %>
+              <br></br>
+            <% end %>
 		</p>
 </body>
 </html>

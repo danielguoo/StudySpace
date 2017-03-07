@@ -60,6 +60,14 @@
       <div class="col s8">
         <div class="z-depth-2" id="message">
           <div class="container" id="text">
+          <div>
+          <h4> Courses I'm in: </h4>
+            <% (0..@user.courses.length - 1).each do |i| %>
+              <%=link_to(@user.courses[i].name, course_path(@user.courses[i].id)) %>
+              <br></br>
+            <% end %>
+            
+          </div>
             <div class="row">
              <form class="col s12">
                <div class="row">
