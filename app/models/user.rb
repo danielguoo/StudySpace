@@ -16,7 +16,10 @@ class User < ApplicationRecord
     validates :gradyear, presence: true, length: {minimum: 4},
       format: { with: VALID_YEAR_REGEX, multiline: true }
   validates :facebook, length: {maximum: 255 }
-  :avatar
+  
+  has_attached_file :avatar
+  validates_attachment_content_type :avatar, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+
 
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :

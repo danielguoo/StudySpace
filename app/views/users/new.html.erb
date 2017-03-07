@@ -21,7 +21,7 @@
   </script>
 
 
-<% provide(:title, 'Sign up') %>
+<% provide(:title, 'Sign Up') %>
 <div class="col s12 heading">
   <h1>Study<span class="spaceColor">Space</span></h1>
 </div>
@@ -30,7 +30,7 @@
     <div class="row">
       <h2>Register to start finding study partners</h2>
     </div>
-    <%= form_for(@user, url: signup_path) do |f| %>
+    <%= form_for(@user, url: signup_path, :html => { :multipart => true}) do |f| %>
     <%= render '/shared/error_messages' %>
         <div class="row">
           <%= f.label :name %>
@@ -95,7 +95,7 @@
         </div>
         <% end %>
         <div class="row">
-          <p id="hasAccount">Already have an account? <%= link_to "Log in here!", home_path  %></p>
+          <p id="hasAccount">Already have an account? <%= link_to "Log in here!", login_path  %></p>
         </div>
   </div>
 </div>
