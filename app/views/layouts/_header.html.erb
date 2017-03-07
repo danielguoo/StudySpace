@@ -1,17 +1,27 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
+<header class="top-nav">
+<style>    
+      nav ul li a{
+        color: white;
+      }    
+    </style>
+  <div class="navbar navbar-fixed-top navbar-inverse">
     <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", root_path %></li>
-        <% if logged_in? %>
-          <li><%= link_to "Users", '#' %></li>
-          <li>
-                <%= link_to "Log out", logout_path, method: "delete" %>
-              </li>
-        <% else %>
-          <li><%= link_to "Log in", login_path %></li>
-        <% end %>
-      </ul>
+      <div class="nav-wrapper teal lighten-2 " id="logo" >
+        <ul class="right hide-on-med-and-down">
+          <li><%= link_to "Home",   root_path %></li>
+          <% if logged_in? %>
+            <li><%= link_to "Profile", current_user %></li>
+            <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+          <% else %>
+            <li><%= link_to "Log in", login_path %></li>
+          <% end %>
+          <!--<li><a href="sass.html">Sass</a></li>
+          <li><a href="badges.html">Components</a></li>
+          <li class="active"><a href="collapsible.html">JavaScript</a></li>-->
+        </ul>
+      </div>
     </nav>
   </div>
+
 </header>
+

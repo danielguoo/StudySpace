@@ -1,23 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>StudySpace</title>
+    <title><%= yield(:title) %> | StudySpace</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'default', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'default', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.2/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.2/js/materialize.min.js"></script>
+      
+    
+
+
   </head>
 
   <body>
+
+    
+<!--    <header class="navbar navbar-fixed-top navbar-inverse teal lighten-2">
+      <div class="container teal lighten-2">
+        <nav>
+          <ul class="nav navbar-nav navbar-right ">
+
+          </ul>
+        </nav>
+      </div>
+    </header>-->
+
     <%= render 'layouts/header' %>
     <div class="container">
       <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
       <% end %>
       <%= yield %>
-      <%= render 'layouts/footer' %>
+
       <% if false %>
-      	<%= debug(params) if Rails.env.development? %>
+        <%= debug(params) if Rails.env.development? %>
       <% end %>
     </div>
   </body>
