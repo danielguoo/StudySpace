@@ -6,6 +6,8 @@
   <script src="profilepage.js"></script>
   <%= stylesheet_link_tag "profilepage" %>
   <title>Profile</title>
+  <% provide(:title, 'Profile') %>
+
 </head>
 <body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -15,7 +17,11 @@
       <div class="col s4">
         <div class="z-depth-2" id="profile">
           <div class="profilepic">
-            <img class="circle responsive-img" src="/images/austinLee.jpg">
+            <% if @user.avatar? %>
+              <%= image_tag @user.avatar.url, class: "circle responsive-img" %>
+            <% else %>
+              <img class="circle responsive-img" src="/images/default-user.png">
+            <% end %>
           </div>
           <div class="container" id="info">
             <p class="name">
