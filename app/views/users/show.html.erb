@@ -23,13 +23,18 @@
             </p>
             <div class="links">
               <div class="row" id="icons">
-                <div class="col s4">
+                <div class="mid">
                   <div class="facebook">
-                    <a href="https://www.facebook.com/8enson">
-                      <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
-                    </a>
+                    <% if @user[:facebook].nil? %>
+                      <a href=<%= "https://#{@user[:facebook]}" %> >
+                        <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
+                      </a>
+                    <% else %>
+                       <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
+                    <% end %>
                   </div>
                 </div>
+                <!--
                 <div class="col s4">
                   <div class="google">
                     <a href="https://plus.google.com/u/0/115244788777779861342">
@@ -44,14 +49,15 @@
                     </a>
                   </div>
                 </div>
+              -->
               </div>
               <hr />
               <div class="email">
                 <%= @user[:email] %>
               </div>
               <hr />
-              <div class="phone">
-                503-704-6558 (need migration for this lol)
+              <div class="bio">
+                <%= @user[:bio] %>
               </div>
             </div>
           </div>
