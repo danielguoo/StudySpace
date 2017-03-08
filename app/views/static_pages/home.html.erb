@@ -20,8 +20,16 @@
 	  <br>
 	  <br>
 	  <br>
-	    
-	</div>
+	  	<% if logged_in? %> 
+  			<div class="loginBtn">
+	  		<%= link_to "Find Study Groups!", current_user, class: " btn-large btn-primary" %>
+	  	  </div> 
+		<% else %>
+		  <div class="loginBtn">
+	  		<%= link_to "Sign up now!", '/signup', class: " btn-large btn-primary" %>
+	  	  </div>  
+		<% end %>
+
 
 	<% if false %>
 		<%= link_to image_tag("rails.png", alt: "Rails logo"),

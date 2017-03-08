@@ -24,32 +24,23 @@
               <% else %>
                 <img class="circle responsive-img" src="/images/default-user.png">
               <% end %>
-          </div>
-          <div class="container" id="info">
-            <p class="name">
-              <%= @user[:name] %>
-            </p>
-            <div class="links">
-              <div class="row" id="icons">
-                <div class="col s4">
-                  <div class="facebook">
-                    <a href="https://www.facebook.com/8enson">
-                      <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                </div>
-                <div class="col s4">
-                  <div class="google">
-                    <a href="https://plus.google.com/u/0/115244788777779861342">
-                      <i class="fa fa-google-plus-official fa-2x" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                </div>
-                <div class="col s4">
-                  <div class="linkedin">
-                    <a href="https://www.linkedin.com/in/8enson/">
-                      <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
-                    </a>
+            </div>
+            <div class="container" id="info">
+              <p class="name">
+                <%= @user[:name] %>
+              </p>
+              <div class="links">
+                <div class="row" id="icons">
+                  <div class="mid">
+                    <div class="facebook">
+                      <% if @user.facebook? %>
+                        <a href=<%= "https://www.#{@user[:facebook]}" %> >
+                          <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
+                        </a>
+                      <% else %>
+                         <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
+                      <% end %>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -64,8 +55,7 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="col s8">
+        <div class="col s8">
         <div class="z-depth-2" id="message">
           <div class="container" id="text">
           <div>
@@ -91,6 +81,7 @@
            </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   </div>
