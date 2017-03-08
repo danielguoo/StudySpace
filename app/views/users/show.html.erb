@@ -9,65 +9,58 @@
   <% provide(:title, 'Profile') %>
 
 </head>
+
 <body>
-  <% if logged_in? %> <!--User is logged in so show all users' pages-->
+  <% if logged_in? %>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
-    <div class="container">
-      <div class="row">
-        <div class="col s4">
-          <div class="z-depth-2" id="profile">
-            <div class="profilepic">
-              <% if @user.avatar? %>
+  <div class="container">
+    <div class="row">
+      <div class="col s4">
+        <div class="z-depth-2" id="profile">
+          <div class="profilepic">
+             <% if @user.avatar? %>
                 <%= image_tag @user.avatar.url, class: "circle responsive-img" %>
               <% else %>
                 <img class="circle responsive-img" src="/images/default-user.png">
               <% end %>
-            </div>
-            <div class="container" id="info">
-              <p class="name">
-                <%= @user[:name] %>
-              </p>
-              <div class="links">
-                <div class="row" id="icons">
-                  <div class="mid">
-                    <div class="facebook">
-                      <% if @user[:facebook].nil? %>
-                        <a href=<%= "https://#{@user[:facebook]}" %> >
-                          <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
-                        </a>
-                      <% else %>
-                         <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
-                      <% end %>
-                    </div>
+          </div>
+          <div class="container" id="info">
+            <p class="name">
+              <%= @user[:name] %>
+            </p>
+            <div class="links">
+              <div class="row" id="icons">
+                <div class="col s4">
+                  <div class="facebook">
+                    <a href="https://www.facebook.com/8enson">
+                      <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
+                    </a>
                   </div>
-                 
-                  <div class="col s4">
-                    <div class="google">
-                      <a href="https://plus.google.com/u/0/115244788777779861342">
-                        <i class="fa fa-google-plus-official fa-2x" aria-hidden="true"></i>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="col s4">
-                    <div class="linkedin">
-                      <a href="https://www.linkedin.com/in/8enson/">
-                        <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
-                      </a>
-                    </div>
-                  </div>
-                
                 </div>
-                <hr />
-                <div class="email">
-                  <%= @user[:email] %>
-
+                <div class="col s4">
+                  <div class="google">
+                    <a href="https://plus.google.com/u/0/115244788777779861342">
+                      <i class="fa fa-google-plus-official fa-2x" aria-hidden="true"></i>
+                    </a>
+                  </div>
                 </div>
-                <hr />
-                <div class="bio">
-                  <%= @user[:bio] %>
+                <div class="col s4">
+                  <div class="linkedin">
+                    <a href="https://www.linkedin.com/in/8enson/">
+                      <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+                    </a>
+                  </div>
                 </div>
               </div>
+              <hr />
+              <div class="email">
+                <%= @user[:email] %>
+              </div>
+              <hr />
+               <div class="bio">
+                  <%= @user[:bio] %>
+                </div>
             </div>
           </div>
         </div>
@@ -83,27 +76,24 @@
             <% end %>
             
           </div>
-        <div class="col s8">
-          <div class="z-depth-2" id="message">
-            <div class="container" id="text">
-              <div class="row">
-               <form class="col s12">
-                 <div class="row">
-                   <div class="input-field col s12">
-                     <textarea id="textarea1" class="materialize-textarea"></textarea>
-                     <label for="textarea1">Write a message here...</label>
-                   </div>
+            <div class="row">
+             <form class="col s12">
+               <div class="row">
+                 <div class="input-field col s12">
+                   <textarea id="textarea1" class="materialize-textarea"></textarea>
+                   <label for="textarea1">Write a message here...</label>
                  </div>
-               </form>
-             </div>
-             <div class="contactbtn">
-               <a class="waves-effect waves-light btn">Send!</a> <!--How to mail stuff: http://api.rubyonrails.org/classes/ActionView/Helpers/UrlHelper.html#method-i-mail_to -->
-             </div>
-            </div>
+               </div>
+             </form>
+           </div>
+           <div class="contactbtn">
+             <a class="waves-effect waves-light btn">Send!</a>
+           </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
   <% else %> <!--User is not logged in so redirect to login page-->
     <script type="text/javascript">
       window.location.href="/login"
