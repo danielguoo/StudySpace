@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20170307081043) do
     t.integer  "gradyear"
     t.text     "bio"
     t.string   "facebook"
-    #t.binary   "avatar"
+    t.binary   "avatar"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
