@@ -16,10 +16,17 @@ class UsersController < ApplicationController
         render 'new'
     end
   end
+
+  def edit
+    @user= current_user
+    @user.courses << params[:course_ids]
+    redirect_to @user
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :major, :gradyear, :bio, :facebook, :avatar, :course_ids =>[] ) #, :course_ids =>[]
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :major, :gradyear, :bio, :facebook, :avatar, :course_ids =>[] ) 
   end
 end
 

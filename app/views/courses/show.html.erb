@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title> Course
+		<title> <% provide(:title, @course.name) %>
 		</title>
 	</head>
 	<body>
@@ -15,5 +15,6 @@
               <br></br>
             <% end %>
 		</p>
+		<%= link_to("Join this class", edit_course_path(@course.id)) %>
 </body>
 </html>

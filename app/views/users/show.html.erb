@@ -59,12 +59,12 @@
         <div class="z-depth-2" id="message">
           <div class="container" id="text">
           <div>
+          <%=link_to("Find a new course", courses_path) %>
           <h4> Courses I'm in: </h4>
             <% (0..@user.courses.length - 1).each do |i| %>
               <%=link_to(@user.courses[i].name, course_path(@user.courses[i].id)) %>
               <br></br>
-            <% end %>
-            
+              <% end %>
           </div>
             <div class="row">
              <form class="col s12">

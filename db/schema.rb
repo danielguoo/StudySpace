@@ -10,17 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170307081043) do
+ActiveRecord::Schema.define(version: 20170308070300) do
 
   create_table "courses", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "subject"
+    t.string   "professor"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "courses_users", id: false, force: :cascade do |t|
     t.integer "user_id"
     t.integer "course_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "published_at"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -33,7 +43,6 @@ ActiveRecord::Schema.define(version: 20170307081043) do
     t.integer  "gradyear"
     t.text     "bio"
     t.string   "facebook"
-    t.binary   "avatar"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
