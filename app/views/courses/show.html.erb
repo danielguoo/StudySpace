@@ -8,13 +8,24 @@
 		<h1>
 			<%= @course.name %>
 		</h1>
+		<h3>
+			Subject: <%= @course.subject%>
+		</h3>
+		<h3>
+			Professor: <%= @course.professor%>
+		</h3>
+		<h4>
+			Description: <%= @course.description%>
+		</h4> 
+		<br>
+		<%= link_to("Join this class", edit_course_path(@course.id)) %>
+		<br>
 		<p>
 			<h4> Users in this class: </h4>
             <% (0..@course.users.length - 1).each do |i| %>
-              <%=link_to(@course.users[i].name, user_path(@course.users[i].id)) %>
-              <br></br>
+              <li><%=link_to(@course.users[i].name, user_path(@course.users[i].id)) %></li>
             <% end %>
+            <br></br>
 		</p>
-		<%= link_to("Join this class", edit_course_path(@course.id)) %>
 </body>
 </html>
