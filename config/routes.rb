@@ -5,13 +5,12 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   get '/logout',  to: 'sessions#destroy'
+  resources :users
+  resources :courses
 
   #following pages#<name> routes are useless and are intended to be mere placeholders only.
   get '/search', to:'pages#search'
   get '/people', to:'pages#people'
   #get '/profilepage', to:'pages#profilepage'
-  
-
-  resources :users #do not delete this!!!
 
 end
