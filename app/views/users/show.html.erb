@@ -32,8 +32,8 @@
                 <div class="row" id="icons">
                   <div class="mid">
                     <div class="facebook">
-                      <% if @user[:facebook].nil? %>
-                        <a href=<%= "https://#{@user[:facebook]}" %> >
+                      <% if @user.facebook? %>
+                        <a href=<%= "https://www.#{@user[:facebook]}" %> >
                           <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
                         </a>
                       <% else %>
