@@ -20,9 +20,15 @@
 	  <br>
 	  <br>
 	  <br>
-	    <div class="loginBtn">
+	  	<% if logged_in? %> 
+  			<div class="loginBtn">
+	  		<%= link_to "Find Study Groups!", current_user, class: " btn-large btn-primary" %>
+	  	  </div> 
+		<% else %>
+		  <div class="loginBtn">
 	  		<%= link_to "Sign up now!", '/signup', class: " btn-large btn-primary" %>
-	  	</div>
+	  	  </div>  
+		<% end %>
 	</div>
 
 	<% if false %>
