@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<% provide(:title, 'Courses') %>
+	</head>
+	<body>
+		<h4>
+			Add a course:
+		</h4>
+		<div>
+            <% @courses.each do |course| %>
+            	<%=link_to(course.name, course_path(course.id)) %>
+            	<%=check_box_tag("user[course_ids][]", course.id, current_user.courses.include?(course)) %>
+              <br/>
+            <% end %>
+		</div>
+		<div>
+			<h4> Create a new course </h4>
+			<%= form_for(@course) do |f| %>
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+            <%= f.label :subject %>
+            <%= f.text_field :subject %>
+            <%= f.label :professor %>
+            <%= f.text_field :professor %>
+            <%= f.label :description %>
+            <%= f.text_field :description %>
+            <%= f.submit %>
+      <% end %>
+
+		</div>
+</body>
+</html>
