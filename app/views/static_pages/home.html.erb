@@ -22,7 +22,7 @@
 	  <br>
 	  	<% if logged_in? %> 
   			<div class="loginBtn">
-	  		<%= link_to "Find Study Groups!", current_user, class: " btn-large btn-primary" %>
+	  		<%= link_to "Find Study Groups!", courses_path, class: " btn-large btn-primary" %>
 	  	  </div> 
 		<% else %>
 		  <div class="loginBtn">
