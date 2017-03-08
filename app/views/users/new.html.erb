@@ -79,7 +79,18 @@
         </div>
 
         <!-- Courses goes here(i think u might want to move this to another form_for loop that deals with classes (just put the user into the course's array that user picked-->
-        
+        <div class="row">
+            <%= f.label :courses, "Courses" %>
+            <%= f.select(:course_ids, [['CS 111', 1],
+                                  ['CS M117', 2],
+                                  ['CS 32', 3],
+                                  ['CS 35L', 4],
+                                  ['CS 143', 5]
+                                 ],{ :prompt => "Select Your Courses"},
+                                   { :multiple => true, :size => 5 }
+                                 ) %>
+
+        </div>
 
 
         <div class="row">
