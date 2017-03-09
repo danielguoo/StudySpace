@@ -82,8 +82,10 @@
         <div class="col s8">
         <div class="z-depth-2" id="message">
           <div class="container" id="text">
-          
-            
+          	<h4 class="center"> Users Enrolled: </h4>
+            <% (0..@course.users.length - 1).each do |i| %>
+              <li class="center"><%=link_to(@course.users[i].name, user_path(@course.users[i].id)) %></li>
+            <% end %>
           </div>
         </div>
       </div>
@@ -97,9 +99,7 @@
 
 		<br>
 		<p>
-			<h4> Users in this class: </h4>
-            <% (0..@course.users.length - 1).each do |i| %>
-              <li><%=link_to(@course.users[i].name, user_path(@course.users[i].id)) %></li>
-            <% end %>
+			
+            
             <br></br>
 		</p>
