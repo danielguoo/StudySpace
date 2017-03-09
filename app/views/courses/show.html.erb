@@ -1,24 +1,100 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title> <% provide(:title, @course.name) %>
-		</title>
-	</head>
-	<body>
-		<h1>
-			<%= @course.name %>
-		</h1>
-		<h3>
-			Subject: <%= @course.subject%>
-		</h3>
-		<h3>
-			Professor: <%= @course.professor%>
-		</h3>
-		<h4>
-			Description: <%= @course.description%>
-		</h4> 
-		<br>
-		<%= link_to("Join this class", edit_course_path(@course.id)) %>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+  <script src="https://use.fontawesome.com/d29dec308b.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Montserrat" rel="stylesheet">
+  <script src="profilepage.js"></script>
+  <%= stylesheet_link_tag "profilepage" %>
+	<title> <% provide(:title, @course.name) %>	</title>  
+  <style>    
+    .breakWord {
+      width: 12em;
+      overflow-wrap: break-word;
+    }  
+    .profilepic {
+      padding-top: 3px;
+      padding-bottom: 2px;
+    }
+    .name {
+      display: block;
+      padding-top: 2px;
+    }
+    .facebook {
+      display: block;
+      padding-bottom: 1px;
+    }
+    .course_ids {
+    	padding-top: 3px;
+    }
+  </style>
+</head>
+
+<body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+  <div class="container">
+    <div class="row">
+      <div class="col s4">
+        <div class="z-depth-2" id="profile">
+
+        	<div class = "course_ids">
+	            <h3 class = "center">
+					<%= @course.name %>
+				</h3>
+			</div>
+
+			<div class = "course_ids">
+	            <h5 class = "center">
+	            	Subject
+				</h5>
+				<h6 class= "center">
+					<%= @course.subject%>
+				</h6>
+			</div>
+
+			<div class = "course_ids">
+				<h5 class = "center">
+	            	Professor
+				</h5>
+				<h6 class= "center">
+					<%= @course.professor%>
+				</h6>
+			</div>			
+
+			<div class = "course_ids">
+				<h5 class = "center">
+	            	Description
+				</h5>
+				<h6 class= "center">
+					<%= @course.description%>
+				</h6>
+			</div>
+			<div class="course_ids">
+				<br><br>
+					<div class="center">
+		  				<%= link_to "Join this class", edit_course_path(@course.id), class: "btn" %>
+		  	  		</div>  
+		  	 </div>
+
+        </div>
+      </div>
+
+        <div class="col s8">
+        <div class="z-depth-2" id="message">
+          <div class="container" id="text">
+          
+            
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+
+
+
 		<br>
 		<p>
 			<h4> Users in this class: </h4>
@@ -27,5 +103,3 @@
             <% end %>
             <br></br>
 		</p>
-</body>
-</html>

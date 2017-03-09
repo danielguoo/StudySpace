@@ -1,32 +1,85 @@
 <!DOCTYPE html>
+
 <html>
+      <style>
+            .center {
+                  text-align: center;
+                  //list-style-position: inside;
+            }    
+      </style>
+
 	<head>
 		<% provide(:title, 'Courses') %>
+            <title>StudySpace</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <%= stylesheet_link_tag "courses_index" %>
 	</head>
 	<body>
-		<h4>
-			Add a course:
-		</h4>
-		<div>
-            <% @courses.each do |course| %>
-            	<li><%=link_to(course.name, course_path(course.id)) %></li>
-            	<%=check_box_tag("user[course_ids][]", course.id, current_user.courses.include?(course)) %>
-            <% end %>
+             <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+              <script type="text/javascript">
+                $(document).ready(function() {
+                  $('select').material_select();
+                });
+
+              </script>
             <br/>
-		</div>
-		<div>
-			<h4> Create a new course </h4>
+        <div class="login container z-depth-2">
+            <br/>
+		<h4 class="center">
+			Add A Course
+		</h4>
+            <br/>
+		<ol type="1" class="center">
+                  <% @courses.each do |course| %>
+            	     <p class="center"><%=link_to(course.name, course_path(course.id)) %></p>
+            	     <%#=check_box_tag("user[course_ids][]", course.id, current_user.courses.include?(course)) %>
+                  <% end %>
+            <br/>
+		</ol>
+            <br/>
+            <br/>
+        </div>
+		<div class="login container z-depth-2">
+                  <br/>
+			<div class="row">
+                        <h4 class="center">Create a new course</h4>
+                  <div>
+
 			<%= form_for(@course) do |f| %>
-            <%= f.label :name %>
-            <%= f.text_field :name %>
-            <%= f.label :subject %>
-            <%= f.text_field :subject %>
-            <%= f.label :professor %>
-            <%= f.text_field :professor %>
-            <%= f.label :description %>
-            <%= f.text_field :description %>
-            <%= f.submit %>
-      <% end %>
+                        <div class="row">
+                              <div class="input-field col s10 offset-s1">
+                                    <%= f.label :name %>
+                                    <%= f.text_field :name %>
+                              </div>
+                        </div>
+                        <div class="row">
+                              <div class="input-field col s10 offset-s1">
+                                    <%= f.label :subject %>
+                                    <%= f.text_field :subject %>
+                              </div>
+                        </div>
+                        <div class="row">
+                              <div class="input-field col s10 offset-s1">
+                                    <%= f.label :professor %>
+                                    <%= f.text_field :professor %>
+                              </div>
+                        </div>
+                        <div class="row">
+                              <div class="input-field col s10 offset-s1">
+                                    <%= f.label :description %>
+                                    <%= f.text_field :description %>
+                              </div>
+                        </div>
+  
+                        <div class="row offsest-s1">
+                              <div class="loginBtn">
+                                    <%= f.submit "Create Course", class: "btn-large btn-primary" %>
+                              </div>
+                        </div>
+                  <% end %>
 
 		</div>
 </body>

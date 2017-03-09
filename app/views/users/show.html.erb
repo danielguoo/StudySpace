@@ -88,10 +88,10 @@
         <div class="z-depth-2" id="message">
           <div class="container" id="text">
           <div>
-          <h4 class="center"> Courses I'm in: </h4>
-            <% (0..@user.courses.length - 1).each do |i| %>
-              <li><%=link_to(@user.courses[i].name, course_path(@user.courses[i].id)) %></li>
-            <% end %>
+          <h4 class="center"> Courses I'm In</h4>
+              <% (0..@user.courses.length - 1).each do |i| %>
+                  <p class="center"><%=link_to(@user.courses[i].name, course_path(@user.courses[i].id)) %></p>
+              <% end %>
             <% if @user.courses.length == 0 %>
                 <p class="center">None</p>
             <% end %>
@@ -115,10 +115,11 @@
                    </div>
                  </div>
                </form>
-              </div>
                <div class="contactbtn">
                  <a class="waves-effect waves-light btn">Send!</a>
                </div>
+              </div>
+               
             <% end %>
           </div>
         </div>
