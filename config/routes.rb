@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/logout',  to: 'sessions#destroy'
   resources :users
   resources :courses
+  resources :posts, only: [:new, :create, :index]
 
   #following pages#<name> routes are useless and are intended to be mere placeholders only.
   get '/search', to:'pages#search'

@@ -139,6 +139,40 @@
 		</table>
 
       </div>
+      <div>
+      <%= form_for(@post) do |f| %>
+                        <div class="row">
+                              <div class="input-field col s10 offset-s1">
+                                    <%= f.label :name %>
+                                    <%= f.text_field :name %>
+                              </div>
+                        </div>
+                        <div class="row">
+                              <div class="input-field col s10 offset-s1">
+                                    <%= f.label :content %>
+                                    <%= f.text_field :content %>
+                              </div>
+                        </div>
+  
+                        <div class="row offsest-s1">
+                              <div class="loginBtn">
+                                    <%= f.submit "Create Post", class: "btn-large btn-primary" %>
+                              </div>
+                        </div>
+                        <%= f.hidden_field :user_id, value: current_user.id %>
+                        <%= f.hidden_field :course_id, value: @course.id %>
+                  <% end %>
+                  </div>
+     <div>
+     		<% @posts.each do |post| %>
+     			<%= User.find(post.user_id).name  %> </br>	
+     			<%= post.name  %> </br>
+     			<%= post.content  %> </br>
+     			<%= post.created_at  %> </br>
+     		</br>
+     	</br>
+     		<% end %>
+     </div>
     <!--</div>
   </div>-->
 </body>

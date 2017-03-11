@@ -19,11 +19,13 @@ class CoursesController < ApplicationController
       unless @course.users.include?(current_user)
         @course.users << current_user
       end
-      redirect_to(current_user)
+      redirect_to(@course)
     end
 
     def show
       @course= Course.find(params[:id])
+      @post= Post.new
+      @posts= @course.posts
     end
 
     def course_params

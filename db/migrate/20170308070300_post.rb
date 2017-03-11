@@ -3,7 +3,8 @@ class Post < ActiveRecord::Migration[5.0]
   	create_table :posts do |t|
     	t.string :name
     	t.text :content
-    	t.datetime :published_at
+    	t.integer :user_id
+    	t.integer :course_id
       t.timestamps
     end
   end
