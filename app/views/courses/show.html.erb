@@ -4,13 +4,23 @@
   <script src="https://use.fontawesome.com/d29dec308b.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Pacifico|Montserrat" rel="stylesheet">
   <script src="profilepage.js"></script>
-  <%= stylesheet_link_tag "profilepage" %>
-	<title> <% provide(:title, @course.name) %>	</title>  
-  <style>    
+  <%= stylesheet_link_tag "new" %>
+	<title> <% provide(:title, @course.name) %>	</title>
+  <style>
+    .container {
+      width: 80%;
+    }
+    #title {
+      padding-bottom: 20px;
+    }
+    .circle {
+      width: 40px;
+      height: 40px;
+    }
     .breakWord {
       width: 12em;
       overflow-wrap: break-word;
-    }  
+    }
     .profilepic {
       padding-top: 3px;
       padding-bottom: 2px;
@@ -32,9 +42,77 @@
 <body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+  <h1 class="center" id="title">
+    <%= @course.name %>
+  </h1>
+  <div class="row">
+    <div class="col s4">
+      <div class="container">
+        <h4 class="center">Classmates</h4>
+        <% n = 1 %>
+        <% @course.users.in_groups_of(n, false).each do |users| %>
+        <% (0..users.length - 1).each do |i| %>
+        <div class="row">
+          <div class="col s4">
+            <% if users[i].avatar? %>
+              <%= image_tag users[i].avatar.url, class: "circle" %>
+            <% else %>
+              <img src="/images/default-user.png" class="circle">
+            <% end %>
+          </div>
+          <div class="col s8">
+            <p id="name">
+              <%= users[i].name %>
+            </p>
+          </div>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col s8">
+      <div class="container">
+        <h4 class="center">Forum</h4>
+        <div>
+          <%= form_for(@post) do |f| %>
+          <div class="row">
+            <div class="input-field col s10 offset-s1">
+              <%= f.label :name %>
+              <%= f.text_field :name %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s10 offset-s1">
+                <%= f.label :content %>
+                <%= f.text_field :content %>
+            </div>
+          </div>
+          <div class="row offsest-s1">
+            <div class="loginBtn">
+                  <%= f.submit "Create Post", class: "btn-large btn-primary" %>
+            </div>
+          </div>
+            <%= f.hidden_field :user_id, value: current_user.id %>
+            <%= f.hidden_field :course_id, value: @course.id %>
+            <% end %>
+        </div>
+         <div>
+         		<% @posts.each do |post| %>
+         			<%= User.find(post.user_id).name  %> </br>
+         			<%= post.name  %> </br>
+         			<%= post.content  %> </br>
+         			<%= post.created_at  %> </br>
+         		</br>
+         	  </br>
+         		<% end %>
+         </div>
+      </div>
+    </div>
+  </div>
+
   <!--<div class="container">-->
 
-    <div class="row">
+    <!-- <div class="row">
       <div class="center">
       <div class="col s6">
         <div class="z-depth-2" id="profile">
@@ -61,7 +139,7 @@
 				<h6 class= "center">
 					<%= @course.professor%>
 				</h6>
-			</div>			
+			</div>
 
 			<div class = "course_ids">
 				<h5 class = "center">
@@ -75,7 +153,7 @@
 				<br><br>
 					<div class="center">
 		  				<%= link_to "Join this class", edit_course_path(@course.id), class: "btn" %>
-		  	  		</div>  
+		  	  		</div>
 		  	 </div>
 
         </div>
@@ -93,20 +171,20 @@
 	        </div>
       	</div>-->
 
-      	<table>
+      	<!-- <table>
       	  <% n = 3 %>
 		  <% @course.users.in_groups_of(n, false).each do |users| %> <!--Creates an array in groups of n's-->
-		    <tr>
+		    <!-- <tr>
 		    	<% (0..users.length - 1).each do |i| %> <!-- Creates n cards per row -->
-			      <td><%#= link_to user.name, user_path(user.id) %>
-			      	<div class="col s4">  <!--See above commented section for how to loop -->
-				      <div class="card">
-				      	
-				        <div class="card-image">
+			      <!-- <td><%#= link_to user.name, user_path(user.id) %> -->
+			      	<!-- <div class="col s4">  <!--See above commented section for how to loop -->
+				      <!-- <div class="card">
+
+				        <div class="card-image"> -->
 				          <%#=image_tag("/images/ryanLo.jpg")%>
 				          <!--</img>-->
 				          <%# debugger %>
-				          <% if users[i].avatar? %>
+				          <!-- <% if users[i].avatar? %>
 
 			                <%= image_tag users[i].avatar.url %>
 			              <% else %>
@@ -131,7 +209,7 @@
 				          </div>
 				        </div>
 				      </div>
-				    </div><!---->
+				    </div>
 			      </td>
 			    <% end %>
 		    </tr>
@@ -153,7 +231,7 @@
                                     <%= f.text_field :content %>
                               </div>
                         </div>
-  
+
                         <div class="row offsest-s1">
                               <div class="loginBtn">
                                     <%= f.submit "Create Post", class: "btn-large btn-primary" %>
@@ -166,15 +244,19 @@
      <div>
      		<h3> Discussion </h3>
      		<% @posts.each do |post| %>
+<<<<<<< HEAD
      			<%= User.find(post.user_id).name  %> </br>	
      			<h5> <%= post.name  %> </br> </h3>
+=======
+     			<%= User.find(post.user_id).name  %> </br>
+     			<%= post.name  %> </br>
+>>>>>>> 5f06d4cfdda0c5efd4de3eb4a45bca562340ecbe
      			<%= post.content  %> </br>
      			<%= post.created_at  %> </br>
      		</br>
      	</br>
      		<% end %>
-     </div>
+     </div> -->
     <!--</div>
   </div>-->
 </body>
-

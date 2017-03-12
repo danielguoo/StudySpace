@@ -1,0 +1,40 @@
+h1{
+  font-weight: lighter;
+}
+.line-1{
+    position: relative;
+    width: 24em;
+    margin: 0 auto;
+    margin-top: 175px;
+    margin-bottom: 30px;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 70px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+}
+.colorTwo{
+  color:#80cbc4;
+}
+.btn-large{
+  font-size: 22px;
+  letter-spacing: .1em;
+  border-radius: 25px;
+}
+.loginBtn{
+  text-align: center;
+}
+/* Animation */
+.anim-typewriter{
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 13em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: black;
+  to{border-right-color: white;}
+}

@@ -4,33 +4,20 @@
   <head>
     <title><%= yield(:title) %> | StudySpace</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+    <%= stylesheet_link_tag "home" %>
   </head>
   <body>
-    <div class="center jumbotron">
-	  <br>
-	  <br>
-	  <br>
-	  <br>
-	  <div class="col s12 heading">
-	    <h1>Welcome to Study<span class="spaceColor">Space</span>!</h1>
-	  </div>
-	  <br>
-	  <br>
-	  <br>
-	  <br>
-	  	<% if logged_in? %> 
+      <h1 class="line-1 anim-typewriter">Find your <span class="colorTwo">study partners</span> now!</h1>
+	  	<% if logged_in? %>
   			<div class="loginBtn">
-	  		<%= link_to "Find Study Groups!", courses_path, class: " btn-large btn-primary" %>
-	  	  </div> 
-		<% else %>
-		  <div class="loginBtn">
-	  		<%= link_to "Sign up now!", '/signup', class: " btn-large btn-primary" %>
-	  	  </div>  
-		<% end %>
-
-
+  	  	<%= link_to "Find Study Groups", courses_path, class: " btn-large btn-primary" %>
+  	  	</div>
+		  <% else %>
+    		<div class="loginBtn">
+    	  <%= link_to "Sign up now", '/signup', class: " btn-large btn-primary" %>
+    	  </div>
+		  <% end %>
 	<% if false %>
 		<%= link_to image_tag("rails.png", alt: "Rails logo"),
 	            'http://rubyonrails.org/' %>

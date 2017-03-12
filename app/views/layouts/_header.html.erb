@@ -1,9 +1,8 @@
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <%= stylesheet_link_tag "headerpg" %>
+</head>
 <header class="top-nav">
-<style>    
-      nav ul li a{
-        color: white;
-      }    
-    </style>
   <div class="navbar navbar-fixed-top navbar-inverse">
     <nav>
       <div class="nav-wrapper teal lighten-2 " id="logo" >
@@ -11,17 +10,19 @@
           <li><%= link_to "Home",   root_path %></li>
           <% if logged_in? %>
             <li><%= link_to "Profile", current_user %></li>
-            <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+            <li><%= link_to "Log Out", logout_path, method: "delete" %></li>
           <% else %>
-            <li><%= link_to "Log in", login_path %></li>
+            <li><%= link_to "Login", login_path %></li>
           <% end %>
-          <!--<li><a href="sass.html">Sass</a></li>
-          <li><a href="badges.html">Components</a></li>
-          <li class="active"><a href="collapsible.html">JavaScript</a></li>-->
         </ul>
+        <ul class="left hide-on-med-and-down">
+          <i class="material-icons">supervisor_account</i>
+        </ul>
+        <div class="heading">
+          <%= link_to "StudySpace",   root_path %>
+        </div>
       </div>
     </nav>
   </div>
 
 </header>
-

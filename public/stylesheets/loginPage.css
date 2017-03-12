@@ -18,14 +18,13 @@ body{
 }
 
 .login h2{
-  font-size: 25px;
+  font-size: 30px;
   padding: 0px;
   margin: 0px;
   padding-bottom: 10px;
   text-align: center;
   color: #80cbc4;
-  font-style: italic;
-  letter-spacing: .1em;
+  font-family: 'Ubuntu', sans-serif;
 }
 .login p{
   text-align: center;
@@ -39,7 +38,9 @@ body{
   background-color:white;
   padding-top: 40px;
   padding-bottom: 5px;
-  width: 600px;
+  width: 700px;
+  margin: 0 auto;
+  margin-top: 5%;
 }
 .btn-large{
   width: 500px;
