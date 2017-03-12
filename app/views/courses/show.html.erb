@@ -143,7 +143,7 @@
       <%= form_for(@post) do |f| %>
                         <div class="row">
                               <div class="input-field col s10 offset-s1">
-                                    <%= f.label :name %>
+                                    <%= f.label :title %>
                                     <%= f.text_field :name %>
                               </div>
                         </div>
@@ -164,9 +164,10 @@
                   <% end %>
                   </div>
      <div>
+     		<h3> Discussion </h3>
      		<% @posts.each do |post| %>
      			<%= User.find(post.user_id).name  %> </br>	
-     			<%= post.name  %> </br>
+     			<h5> <%= post.name  %> </br> </h3>
      			<%= post.content  %> </br>
      			<%= post.created_at  %> </br>
      		</br>
