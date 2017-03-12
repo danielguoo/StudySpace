@@ -7,7 +7,8 @@
   <title>StudySpace</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
-  <%= stylesheet_link_tag "reg" %>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:500" rel="stylesheet">
+  <%= stylesheet_link_tag "register" %>
 
 </head>
 <body>
@@ -22,13 +23,10 @@
 
 
 <% provide(:title, 'Sign Up') %>
-<div class="col s12 heading">
-  <h1>Study<span class="spaceColor">Space</span></h1>
-</div>
 <div class="register container z-depth-4">
   <div class="container">
     <div class="row">
-      <h2>Register to start finding study partners</h2>
+      <h2>Register</h2>
     </div>
     <%= form_for(@user, url: signup_path, :html => { :multipart => true}) do |f| %>
     <%= render '/shared/error_messages' %>
@@ -63,7 +61,7 @@
           <!--insert the last line for bio that was originally here here-->
           <%= f.label :bio, "Short Bio" %>
           <%= f.text_area :bio, class: 'form-control', class: 'materialize-textarea' %>
-          
+
         </div>
         <!-- profile pic goes here-->
         <div class="row">
@@ -75,7 +73,7 @@
             <div class="file-path-wrapper">
               <input class="file-path validate" ,  placeholder="Upload Profile Picture Here">
             </div>
-          </div>          
+          </div>
         </div>
 
         <div class="row">

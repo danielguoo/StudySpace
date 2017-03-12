@@ -4,9 +4,8 @@
   <title>StudySpace</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <%= stylesheet_link_tag "login" %>
-
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:500" rel="stylesheet">
+  <%= stylesheet_link_tag "loginPage" %>
 </head>
 <body>
 
@@ -19,38 +18,30 @@
     });
 
   </script>
-  <div class="col s12 heading">
-    <h1>Study<span class="spaceColor">Space</span></h1>
-  </div>
   <div class="login container z-depth-4">
-
-        <h2>Log in to StudySpace</h2>
+    <div class="container">
+      <div class="row">
+        <h2>Log In to StudySpace</h2>
+      </div>
         <%= form_for(:session, url: login_path) do |f| %>
           <div class="row">
-            <div class="input-field col s10 offset-s1">
               <%= f.label :email %>
               <%= f.email_field :email, class: 'form-control' %>
-            </div>
           </div>
           <div class="row">
-            <div class="input-field col s10 offset-s1">
               <%= f.label :password %>
               <%= f.password_field :password, class: 'form-control' %>
-            </div>
           </div>
-
           <div class="row">
             <div class="loginBtn">
-
                 <%= f.submit "Login", class: "btn-large btn-primary" %>
-
             </div>
           </div>
         <% end %>
-      <div class="row">
+        <div class="row">
           <p id="register">Don't have an account? <%= link_to "Register Here!", signup_path  %></p>
         </div>
-
+      </div>
   </div>
 
 </body>

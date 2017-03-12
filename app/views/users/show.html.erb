@@ -1,131 +1,97 @@
 <!DOCTYPE html>
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
-  <script src="https://use.fontawesome.com/d29dec308b.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Pacifico|Montserrat" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Ubuntu:500" rel="stylesheet">
+  <script src="https://use.fontawesome.com/d29dec308b.js"></script>
   <script src="profilepage.js"></script>
-  <%= stylesheet_link_tag "profilepage" %>
+  <%= stylesheet_link_tag "profile" %>
   <title>Profile</title>
   <% if @user.id == current_user.id %>
     <% provide(:title, 'My Profile') %>
   <% else %>
     <% provide(:title, "#{@user.name}") %>
   <% end %>
-  <style>    
-    .breakWord {
-      width: 12em;
-      overflow-wrap: break-word;
-    }  
-    .profilepic {
-      padding-top: 3px;
-      padding-bottom: 2px;
-    }
-    .name {
-      display: block;
-      padding-top: 2px;
-    }
-    .facebook {
-      display: block;
-      padding-bottom: 1px;
-    }
-  </style>
 </head>
 
 <body>
   <% if logged_in? %>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
-  <div class="container">
     <div class="row">
-      <div class="col s4">
-        <div class="z-depth-2" id="profile">
+      <div class="col s4 leftSide">
           <div class="profilepic">
-             <% if @user.avatar? %>
-                <%= image_tag @user.avatar.url, class: "circle responsive-img" %>
-              <% else %>
-                <img class="circle responsive-img" src="/images/default-user.png">
-              <% end %>
-            </div>
-            <div class="container" id="info">
-                <p class="name">
-                  <%= @user[:name] %>
-                </p>
-              <hr />
-              <div class="links">
-                <div class="row" id="icons">
-                  <div class="center">
-                    <div class="facebook">
-                      <% if @user.facebook? %>
-                        <a href=<%= "https://www.#{@user[:facebook]}" %> >
-                          <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
-                        </a>
-                      <% else %>
-                         <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
-                      <% end %>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="email">
-                <%= @user[:email] %>
-              </div>
-              <div class="major">
-                <%= @user[:major] + " major" %>
-              </div>
-              <hr />
-              <div class="center">
-               <div class="bio">
-                <div class="row">
-                  <%= @user[:bio] %>
-                </div>
-               </div>
-              </div>
-            </div>
+            <% if @user.avatar? %>
+              <%= image_tag @user.avatar.url, class: "circle responsive-img" %>
+            <% else %>
+              <img class="circle responsive-img" src="/images/default-user.png">
+            <% end %>
           </div>
-        </div>
-
-        <div class="col s8">
-        <div class="z-depth-2" id="message">
-          <div class="container" id="text">
-          <div>
-          <h4 class="center"> Courses I'm In</h4>
-              <% (0..@user.courses.length - 1).each do |i| %>
-                  <p class="center"><%=link_to(@user.courses[i].name, course_path(@user.courses[i].id)) %></p>
-              <% end %>
+          <h4 class="center">Courses</h4>
+            <% (0..@user.courses.length - 1).each do |i| %>
+                <p class="center courses"><%=link_to(@user.courses[i].name, course_path(@user.courses[i].id)) %></p>
+            <% end %>
             <% if @user.courses.length == 0 %>
                 <p class="center">None</p>
             <% end %>
-            <br>
+        </div>
+
+        <!-- right section -->
+        <div class="col s8 rightSide">
+        <div class="z-depth-2" id="rightCard">
+          <div class="info" id="info">
+              <p class="name" id="name">
+                <%= @user[:name] %>
+                <% if @user.facebook? %>
+                  <a href=<%= "#{@user[:facebook]}" %> >
+                    <i class="fa fa-facebook-square fa-1x" aria-hidden="true"></i>
+                  </a>
+                <% else %>
+                  <i class="fa fa-facebook-square fa-1x" aria-hidden="true"></i>
+                <% end %>
+                <a href="mailto:<%=@user[:email]%>"><i class="fa fa-envelope fa-1x" aria-hidden="true"></i></a>
+              </p>
+              <hr/>
+              <div class="year">
+                <%= @user[:gradyear] %>
+              </div>
+              <div class="major">
+                <%= @user[:major] %>
+              </div>
+              <div class="bio">
+                <p>&nbsp&nbsp&nbsp&nbsp<%= @user[:bio] %></p>
+              </div>
+            </div>
+          </div>
+          <div>
             <% if @user.id == current_user.id %>
               <div class="center">
                 <div class="loginBtn">
-                  <%= link_to "Find a new course", courses_path, class: " btn-large btn-primary" %>
-                </div>  
+                  <%= link_to "Add More Courses!", courses_path, class: " btn-large btn-primary" %>
+                </div>
               </div>
             <% end %>
             <br>
           </div>
-            <% if @user.id != current_user.id %> <!--This is saying don't give user email option if it's the user's own page!-->
+          <% if @user.id != current_user.id %> <!--This is saying don't give user email option if it's the user's own page!-->
+          <div class="z-depth-2" id="messageCard">
               <div class="row">
-               <form class="col s12" method="post" >
+               <form class="col s10 offset-s1" method="post" >
                  <div class="row">
                    <div class="input-field col s12">
                      <textarea id="textarea1" class="materialize-textarea"></textarea>
                      <label for="textarea1">Write a message here...</label>
                    </div>
                  </div>
+                 <div class="contactbtn">
+                   <a class="waves-effect waves-light btn">Send!</a>
+                 </div>
                </form>
-               <div class="contactbtn">
-                 <a class="waves-effect waves-light btn">Send!</a>
-               </div>
               </div>
-               
-            <% end %>
+            </div>
           </div>
+          <% end %>
         </div>
-      </div>
-      </div>
-    </div>
   </div>
   <% else %> <!--User is not logged in so redirect to login page-->
     <script type="text/javascript">

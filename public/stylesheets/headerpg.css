@@ -1,0 +1,13 @@
+i{
+  padding-left: 10px;
+}
+.heading{
+  font-size: 33px;
+  font-weight: lighter;
+  margin-left: 40px;
+  letter-spacing: .1em;
+}
+
+header{
+  background-color: black;
+}
