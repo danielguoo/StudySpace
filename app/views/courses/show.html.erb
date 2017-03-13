@@ -43,7 +43,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
   <h1 class="center" id="title">
-  <%= @course.name %>
+  <%= @course.name %> </br>
+  <%= link_to "Join this class", edit_course_path(@course.id)%> </br>
+  <%= link_to "delete this class", :controller => :courses,
+    :action => :remove, :id => @course.id%>
   </h1>
   <div class="row">
     <div class="col s4">
@@ -77,7 +80,7 @@
           <%= form_for(@post) do |f| %>
           <div class="row">
             <div class="input-field col s10 offset-s1">
-              <%= f.label :name %>
+              <%= f.label :title %>
               <%= f.text_field :name %>
             </div>
           </div>

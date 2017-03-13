@@ -23,6 +23,12 @@ class UsersController < ApplicationController
     redirect_to @user
   end
 
+  def remove
+    @user= current_user
+    @user.classes.delete
+    redirect_to @user
+  end
+
   private
 
   def user_params
