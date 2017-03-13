@@ -34,7 +34,7 @@
             <% if @user.courses.length == 0 %>
                 <p class="center">None</p>
             <% end %>
-        </div>
+      </div>
 
         <!-- right section -->
         <div class="col s8 rightSide">
@@ -76,15 +76,15 @@
           <% if @user.id != current_user.id %> <!--This is saying don't give user email option if it's the user's own page!-->
           <div class="z-depth-2" id="messageCard">
               <div class="row">
-               <form class="col s10 offset-s1" method="post" >
+               <form class="col s10 offset-s1" method="post">
                  <div class="row">
                    <div class="input-field col s12">
-                     <textarea id="textarea1" class="materialize-textarea"></textarea>
-                     <label for="textarea1">Write a message here...</label>
+                     <textarea id="ta1" class="materialize-textarea"></textarea>
+                     <label for="ta1">Write a message here...</label>
                    </div>
                  </div>
                  <div class="contactbtn">
-                   <a class="waves-effect waves-light btn">Send!</a>
+                   <a class="waves-effect waves-light btn"onclick="location.href=&quot;mailto:<%=@user[:email]%>?subject=Hello%20Study%20Buddy&body=&quot;+document.getElementById(&quot;ta1&quot;).value;" value="Send">Send!</a>
                  </div>
                </form>
               </div>

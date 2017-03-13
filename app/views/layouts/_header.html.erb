@@ -4,12 +4,24 @@
 </head>
 <header class="top-nav">
   <div class="navbar navbar-fixed-top navbar-inverse">
+    <% if logged_in? %>
+    <ul id="myCourses" class="dropdown-content">
+      <% current_user.courses.each do |course| %>
+        <li><%= link_to(course.name, course_path(course.id)) %></li>
+      <% end %>
+      <% if current_user.courses.length == 0 %>
+          <li>None</li>
+      <% end %>
+    </ul>
+    <% else %>
+    <% end %>
     <nav>
       <div class="nav-wrapper teal lighten-2 " id="logo" >
         <ul class="right hide-on-med-and-down">
           <li><%= link_to "Home",   root_path %></li>
           <% if logged_in? %>
             <li><%= link_to "Profile", current_user %></li>
+            <li><a class="dropdown-button" data-activates="myCourses">My Courses</a></li>
             <li><%= link_to "Log Out", logout_path, method: "delete" %></li>
           <% else %>
             <li><%= link_to "Login", login_path %></li>

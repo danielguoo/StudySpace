@@ -5,7 +5,15 @@
             .center {
                   text-align: center;
                   //list-style-position: inside;
-            }    
+            }
+            .btn-large{
+              width: 100px;
+              font-size: 22px;
+              text-align: center;
+              letter-spacing: .2em;
+              display: inline;
+            }
+
       </style>
 
 	<head>
@@ -35,6 +43,7 @@
 		<ol type="1" class="center">
                   <% @courses.each do |course| %>
             	     <p class="center"><%=link_to(course.name, course_path(course.id)) %></p>
+                   <%= link_to "Join this class", edit_course_path(course.id), class: "btn-large btn-primary" %>
             	     <%#=check_box_tag("user[course_ids][]", course.id, current_user.courses.include?(course)) %>
                   <% end %>
             <br/>
@@ -73,7 +82,7 @@
                                     <%= f.text_field :description %>
                               </div>
                         </div>
-  
+
                         <div class="row offsest-s1">
                               <div class="loginBtn">
                                     <%= f.submit "Create Course", class: "btn-large btn-primary" %>
