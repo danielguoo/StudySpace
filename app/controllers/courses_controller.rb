@@ -11,7 +11,7 @@ class CoursesController < ApplicationController
 
     def index
       @course = Course.new
-      @courses= Course.all
+      @courses= Course.order(:name)
     end
 
     def edit
