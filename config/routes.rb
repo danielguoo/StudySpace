@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   get '/logout',  to: 'sessions#destroy'
   resources :users
-  resources :courses
+  resources :courses do
+    collection do
+      get 'remove'
+    end
+  end
   resources :posts, only: [:new, :create, :index]
 
   #following pages#<name> routes are useless and are intended to be mere placeholders only.

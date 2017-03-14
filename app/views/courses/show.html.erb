@@ -2,16 +2,23 @@
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
   <script src="https://use.fontawesome.com/d29dec308b.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Pacifico|Montserrat" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Montserrat|Lato" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
   <script src="profilepage.js"></script>
   <%= stylesheet_link_tag "new" %>
 	<title> <% provide(:title, @course.name) %>	</title>
   <style>
+    .row {
+      font-family: Lato;
+    }
+    .card-panel {
+      padding-bottom: 12px;
+    }
+    .card-panel>.row{
+      margin-bottom: 0px;
+    }
     .container {
       width: 80%;
-    }
-    #title {
-      padding-bottom: 20px;
     }
     .circle {
       width: 40px;
@@ -37,79 +44,126 @@
     	padding-top: 3px;
     }
   </style>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.modal').modal();
+    });
+  </script>
 </head>
 
 <body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
-  <h1 class="center" id="title">
-  <%= @course.name %>
-  </h1>
+  <br />
   <div class="row">
-    <div class="col s4">
-      <div class="container">
-        <h4 class="center">Classmates</h4>
-        <% n = 1 %>
-        <% @course.users.in_groups_of(n, false).each do |users| %>
-        <% (0..users.length - 1).each do |i| %>
-        <div class="row">
-          <div class="col s4">
-            <% if users[i].avatar? %>
-              <%= image_tag users[i].avatar.url, class: "circle" %>
-            <% else %>
-              <img src="/images/default-user.png" class="circle">
-            <% end %>
-          </div>
-          <div class="col s8">
-            <p id="name">
-              <%= users[i].name %>
-            </p>
-          </div>
+    <div class="col s12">
+      <div class="card teal lighten-2">
+        <div class="card-content white-text">
+          <h1 class="center" id="title">
+          <%= @course.name %>
+          <hr width=40%;/>
+          </h1>
+          <h5 class="center">
+            <%= @course.professor%>
+          </h5>
+          <h6 class="center">
+            <%= @course.description%>
+          </h6>
         </div>
-        <% end %>
-        <% end %>
-      </div>
-    </div>
-    <div class="col s8">
-      <div class="container">
-        <h4 class="center">Forum</h4>
-        <div>
-          <%= form_for(@post) do |f| %>
-          <div class="row">
-            <div class="input-field col s10 offset-s1">
-              <%= f.label :name %>
-              <%= f.text_field :name %>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s10 offset-s1">
-                <%= f.label :content %>
-                <%= f.text_field :content %>
-            </div>
-          </div>
-          <div class="row offsest-s1">
-            <div class="loginBtn">
-                  <%= f.submit "Create Post", class: "btn-large btn-primary" %>
-            </div>
-          </div>
-            <%= f.hidden_field :user_id, value: current_user.id %>
-            <%= f.hidden_field :course_id, value: @course.id %>
-            <% end %>
-        </div>
-         <div>
-         		<% @posts.each do |post| %>
-         			<%= User.find(post.user_id).name  %> </br>
-         			<%= post.name  %> </br>
-         			<%= post.content  %> </br>
-         			<%= post.created_at  %> </br>
-         		</br>
-         	  </br>
-         		<% end %>
-         </div>
       </div>
     </div>
   </div>
 
+  <div class="row">
+    <div class="col s4">
+      <div class="container">
+        <h4 class="center">Classmates</h4>
+        <br />
+        <% n = 1 %>
+        <% @course.users.in_groups_of(n, false).each do |users| %>
+        <% (0..users.length - 1).each do |i| %>
+        <div class="chip">
+          <% if users[i].avatar? %>
+            <%= image_tag users[i].avatar.url, class: "circle" %>
+          <% else %>
+            <img src="/images/default-user.png" class="circle">
+          <% end %>
+          <!-- <%= users[i].name %>
+          <%= link_to "Connect", user_path(users[i].id), class: "btn btn-primary" %> -->
+          <%=link_to(users[i].name, user_path(users[i].id)) %>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col s8">
+      <div class="container">
+        <h4 class="center">Forum</h4>
+        <br />
+        <% @posts.each do |post| %>
+          <div class="card-panel z-depth-3">
+            <h4 class="center">
+              <%= post.name  %>
+            </h4>
+            <h5 class="center">
+              <%= post.content  %>
+            </h5>
+            <br />
+            <div class="row">
+              <div class="col s4 grey-text">
+                <%= User.find(post.user_id).name%>
+              </div>
+              <div class="col s8 grey-text">
+                <div class="right">
+                  <%= post.created_at  %>
+                </div>
+              </div>
+            </div>
+          </div>
+    		<% end %>
+
+        <br />
+
+        <div class="row">
+          <div class="col s12">
+            <div class="center">
+              <a class="waves-effect waves-light btn" href="#modal1">Post</a>
+              <div id="modal1" class="modal">
+                <div class="modal-content">
+                  <%= form_for(@post) do |f| %>
+                    <div class="input-field">
+                      <%= f.label :title %>
+                      <%= f.text_field :name %>
+                    </div>
+                    <div class="input-field">
+                      <%= f.label :content %>
+                      <%= f.text_field :content %>
+                    </div>
+                    <br />
+                    <div class="center">
+                      <%= f.submit "Create Post", class: "modal-action modal-close waves-effect waves-green btn-flat" %>
+                    </div>
+                    <%= f.hidden_field :user_id, value: current_user.id %>
+                    <%= f.hidden_field :course_id, value: @course.id %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col s4 offset-s9">
+            <div class="center">
+              <p class="delete">
+                <%= link_to "Unenroll", :controller => :courses,
+                    :action => :remove, :id => @course.id %>
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
   <!--<div class="container">-->
 
     <!-- <div class="row">
@@ -245,7 +299,7 @@
      		<h3> Discussion </h3>
      		<% @posts.each do |post| %>
 <<<<<<< HEAD
-     			<%= User.find(post.user_id).name  %> </br>	
+     			<%= User.find(post.user_id).name  %> </br>
      			<h5> <%= post.name  %> </br> </h3>
 =======
      			<%= User.find(post.user_id).name  %> </br>

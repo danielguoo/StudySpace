@@ -22,6 +22,14 @@ class CoursesController < ApplicationController
       redirect_to(@course)
     end
 
+    def remove
+      @course= Course.find(params[:id])
+      if @course.users.include?(current_user)
+        @course.users.delete(current_user)
+      end
+      redirect_to(@course)
+    end
+
     def show
       @course= Course.find(params[:id])
       @post= Post.new

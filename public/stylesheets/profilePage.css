@@ -1,0 +1,136 @@
+#profile {
+  background-color: white;
+  height: 80vh;
+}
+.profilepic {
+  width: 36vh;
+  height: 36vh;
+  max-width: 43vh;
+  max-height: 43vh;
+  display: block;
+  margin: 0 auto;
+}
+.leftSide{
+  margin-top: 30px;
+}
+.leftSide h4{
+  font-size: 3vh;
+  font-style: italic;
+  font-family: 'Ubuntu';
+}
+.leftSide p{
+  font-size: 2.5vh;
+}
+.leftSide a{
+  color: #80cbc4;
+}
+.leftSide a:hover{
+  text-decoration: underline;
+}
+.rightSide{
+  margin: 0 auto;
+  margin-top: 30px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+#rightCard {
+  height: inherit;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.name{
+  font-family: 'Roboto', sans-serif;
+  text-align: left;
+  font-weight: bold;
+  font-size: 6.5vh;
+  padding: 0 auto;
+  margin: 0 auto;
+}
+.major{
+  text-align: left;
+  color: #80cbc4;
+  font-size: 2.7vh;
+}
+.year{
+  font-size: 2.7vh;
+  float: right;
+  color: #80cbc4;
+}
+.fa-facebook-square{
+  color: #323299;
+  margin: 5px;
+}
+.fa-envelope{
+  color: #d63232;
+  margin: 5px;
+}
+.bio{
+  text-align: left;
+  font-size: 2.7vh;
+  font-family: 'Lato', sans-serif;
+  color: #939393;
+}
+.email{
+  float: right;
+}
+#info {
+  padding-top: .5vh;
+  text-align: center;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.btn-large{
+  width: 500px;
+  height: 55px;
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: .1em;
+  border-radius: 25px;
+}
+.loginBtn{
+  margin-top: 100px;
+  text-align: center;
+}
+
+.btn{
+  width: 330px;
+  height: 55px;
+  font-size: 40px;
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: .1em;
+  border-radius: 25px;
+  padding-top: 10px;
+  margin: 0 auto;
+  padding: 0 auto;
+  display: block;
+}
+#messageCard{
+  height: inherit;
+  padding-bottom: 10px;
+  padding-top: 20px;
+}
+
+/*
+.breakWord {
+  width: 12em;
+  overflow-wrap: break-word;
+}
+.profilepic {
+  padding-top: 3px;
+  padding-bottom: 2px;
+}
+.name {
+  display: block;
+  padding-top: 2px;
+}
+.facebook {
+  display: block;
+  padding-bottom: 1px;
+}
+
+.container {
+  padding-top: 10vh;
+}
+*/
