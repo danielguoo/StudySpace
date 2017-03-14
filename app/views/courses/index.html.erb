@@ -4,6 +4,10 @@
     .center {
         text-align: center;
         //list-style-position: inside;
+        color: teal;
+    }
+    .card-panel {
+      margin: 6px;
     }
     .btn-large{
       width: inherit;
@@ -65,18 +69,22 @@
     			Add a Course
     		</h4>
         <% @courses.each do |course| %>
-        <div class="container">
-          <div class="classes z-depth-2">
-            <div class="row">
-              <div class="col s6">
-                <p class="center"><%=link_to(course.name, course_path(course.id)) %></p>
-              </div>
-              <div class="col s6">
-                <%= link_to "Join", edit_course_path(course.id), class: "btn" %>
-              </div>
-            </div>
+        <div class="row">
+          <div class="col s5">
+            <p class="right"><%=link_to(course.name, course_path(course.id)) %></p>
+          </div>
+          <div class="col s7">
+            <%= link_to "Join", edit_course_path(course.id), class: "btn" %>
           </div>
         </div>
+        <!-- <div class="card-panel">
+
+        </div> -->
+        <!-- <div class="container">
+          <div class="classes z-depth-2">
+
+          </div>
+        </div> -->
         <% end %>
       </div>
     </div>
