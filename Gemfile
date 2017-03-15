@@ -15,6 +15,7 @@ gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '3.2.0.2'
 gem 'paperclip', '~> 5.1'
+gem 'aws-sdk', '~> 2.8', '>= 2.8.7'
 #image uploading here
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick', '~> 4.6', '>= 4.6.1'
